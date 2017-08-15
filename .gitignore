@@ -1,0 +1,18 @@
+#####################################
+# JEC CLI Project .gitignore
+# Please maintain alphabetical order!
+#####################################
+
+#####################################
+# VSCE
+#####################################
+
+# Ignore VSCE folder
+.vscode
+
+#####################################
+# npm
+#####################################
+
+# Ignore 'node_modules' folder
+node_modules

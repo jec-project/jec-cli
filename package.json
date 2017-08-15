@@ -1,0 +1,29 @@
+{
+  "name": "jec-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for managing JEC projects.",
+  "bin": "bin/glasscat",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pechemann/jec-cli.git"
+  },
+  "keywords": [
+    "JEC",
+    "Glasscat",
+    "CLI",
+    "Node.js",
+    "node",
+    "bin",
+    "user interface",
+    "command-line"
+  ],
+  "author": "Pascal ECHEMANN",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/pechemann/jec-cli/issues"
+  },
+  "homepage": "https://github.com/pechemann/jec-cli#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
