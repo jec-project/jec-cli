@@ -25,7 +25,11 @@ process.title = TITLE;
 
 PROGRAM
   .version(VERSION)
-  .command("start-server")
+  .arguments("<cmd>");
+
+PROGRAM
+  .version(VERSION)
+  .command("start [env]")
   .description("starts a GlassCat server")
   .option("-env, --environment [env]", "defines which setup to use for the server environment")
   .action(startServerAction);
