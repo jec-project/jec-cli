@@ -1,0 +1,42 @@
+[
+  {
+    "command": "start",
+    "alias": null,
+    "action": "glasscat/start",
+    "description": "starts a GlassCat server",
+    "options": [
+      {
+        "name": "environment",
+        "alias": "env",
+        "required": false,
+        "description": "defines which setup to use for the server environment"
+      }
+    ]
+  },
+  {
+    "command": "create-jslet",
+    "alias": null,
+    "action": "glasscat/create-jslet",
+    "description": "creates a new jslet with the specified propertie",
+    "options": [
+      {
+        "name": "name",
+        "alias": null,
+        "required": true,
+        "description": "the name of the jslet to create"
+      },
+      {
+        "name": "path",
+        "alias": null,
+        "required": true,
+        "description": "the path where to create the jslet in the current project directory"
+      },
+      {
+        "name": "projectPath",
+        "alias": "project",
+        "required": true,
+        "description": "the path to the project directory in the current workspace"
+      }
+    ]
+  }
+]

@@ -17,7 +17,7 @@ The JEC CLI Project needs the following system parameters in order to work corre
 Set up the JEC CLI module with:
 
 ```bash
-$ npm install jec-cli -g
+$ [sudo] npm install jec-cli -g
 ```
 
 ## Usage
@@ -32,24 +32,15 @@ $ jec help
 $ jec glasscat-install
 ```
 
-Navigate to `http://localhost:9990/admin`. The server automatically starts after its installation.
-
-To prevent automatic start of the server, use:
-
-```bash
-$ jec glasscat-install --mute
-```
-
 To start a GlassCat server instance, use:
 
 ```bash
-$ cd path/to/your/server
-$ glasscat start
+$ <path/to/your/server> glasscat start
 ```
 
 ## Update Release Notes
 
-**Current stable release:** [0.0.1](CHANGELOG.md#jec-cli-0.0.1)
+**Current stable release:** [0.0.2](CHANGELOG.md#jec-cli-0.0.2)
  
 For a complete listing of release notes for all JEC CLI update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 

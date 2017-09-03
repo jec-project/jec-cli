@@ -1,6 +1,6 @@
 {
   "name": "jec-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI tool for managing JEC projects.",
   "bin": {
     "jec": "./bin/jec",
@@ -13,7 +13,7 @@
   },
   "keywords": [
     "JEC",
-    "Glasscat",
+    "GlassCat",
     "CLI",
     "Node.js",
     "node",
@@ -28,7 +28,21 @@
   },
   "homepage": "https://github.com/pechemann/jec-cli#readme",
   "dependencies": {
-    "commander": "^2.11.0"
+    "chalk": "^2.1.0",
+    "figlet": "^1.2.0",
+    "minimist": "^1.2.0",
+    "update-notifier": "^2.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^8.0.26",
+    "@types/update-notifier": "^1.0.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-mocha-test": "^0.13.2",
+    "grunt-ts": "^6.0.0-beta.16",
+    "grunt-typedoc": "^0.2.4",
+    "mocha": "^3.5.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.2"
+  }
 }

@@ -2,34 +2,4 @@
 
 "use strict";
 
-// Imports:
-const PROGRAM = require("commander");
-
-// CLI constants:
-const VERSION = "0.0.1";
-const TITLE = "JEC-CLI";
-
-const installGlassCatAction = (command)=> {
-    console.log("------------>", command)
-};
-
-//-> Program Start
-
-process.title = TITLE;
-
-PROGRAM
-  .version(VERSION)
-  .arguments("<cmd>");
-
-PROGRAM
-  .version(VERSION)
-  .command('install-glasscat')
-  .description("installs a new the GlassCat server")
-  .option("-m, --mute [mute]", "prevents the server to start immediately after its installation")
-  .action(installGlassCatAction);
-
-PROGRAM.parse(process.argv);
-
-if(PROGRAM.args.length === 0) PROGRAM.help();
-
-//<- Program End
+require("../dist/jec-cli");

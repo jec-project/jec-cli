@@ -1,0 +1,16 @@
+[
+  {
+    "command": "install-glasscat",
+    "alias": "ig",
+    "action": "jec/install-glasscat",
+    "description": "installs a new a GlassCat server in the current directory",
+    "options": [
+      {
+        "name": "environment",
+        "alias": "env",
+        "required": false,
+        "description": "defines which setup to use for the server environment"
+      }
+    ]
+  }
+]
