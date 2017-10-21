@@ -43,7 +43,7 @@ export class Start implements Command {
     let scriptPath:string = path.normalize(
       process.cwd() + "/server/com/onsoft/glasscat/cli/scripts/start-server"
     );
-    console.log("startServerAction ------------>", scriptPath);
+    //console.log("startServerAction ------------>", scriptPath);
     childProcess.fork(scriptPath);
   }
 }
