@@ -1,0 +1,133 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.8
+3 info using node@v7.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\Users\\ActionScript\\Documents\\GitHub\\jec-cli',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\ActionScript\AppData\Roaming\npm-cache\jec-cli\0.0.2\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\ActionScript\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle jec-cli@0.0.2~prepublish: jec-cli@0.0.2
+11 silly lifecycle jec-cli@0.0.2~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\ActionScript\\AppData\\Roaming\\npm-cache\\jec-cli\\0.0.2\\package.tgz',
+12 verbose tar pack   'C:\\Users\\ActionScript\\Documents\\GitHub\\jec-cli' ]
+13 verbose tarball C:\Users\ActionScript\AppData\Roaming\npm-cache\jec-cli\0.0.2\package.tgz
+14 verbose folder C:\Users\ActionScript\Documents\GitHub\jec-cli
+15 verbose addLocalTarball adding from inside cache C:\Users\ActionScript\AppData\Roaming\npm-cache\jec-cli\0.0.2\package.tgz
+16 verbose correctMkdir C:\Users\ActionScript\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd jec-cli@0.0.2
+18 verbose afterAdd C:\Users\ActionScript\AppData\Roaming\npm-cache\jec-cli\0.0.2\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\ActionScript\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\ActionScript\AppData\Roaming\npm-cache\jec-cli\0.0.2\package\package.json written
+21 silly publish { name: 'jec-cli',
+21 silly publish   version: '0.0.2',
+21 silly publish   description: 'CLI tool for managing JEC projects.',
+21 silly publish   bin: { jec: './bin/jec', glasscat: './bin/glasscat' },
+21 silly publish   scripts: {},
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/pechemann/jec-cli.git' },
+21 silly publish   keywords:
+21 silly publish    [ 'JEC',
+21 silly publish      'GlassCat',
+21 silly publish      'CLI',
+21 silly publish      'Node.js',
+21 silly publish      'node',
+21 silly publish      'bin',
+21 silly publish      'user interface',
+21 silly publish      'command-line' ],
+21 silly publish   author: { name: 'Pascal ECHEMANN' },
+21 silly publish   license: 'SEE LICENSE IN LICENSE',
+21 silly publish   bugs: { url: 'https://github.com/pechemann/jec-cli/issues' },
+21 silly publish   homepage: 'https://github.com/pechemann/jec-cli#readme',
+21 silly publish   dependencies:
+21 silly publish    { chalk: '^2.1.0',
+21 silly publish      figlet: '^1.2.0',
+21 silly publish      minimist: '^1.2.0',
+21 silly publish      'update-notifier': '^2.2.0' },
+21 silly publish   devDependencies:
+21 silly publish    { '@types/node': '^8.0.26',
+21 silly publish      '@types/update-notifier': '^1.0.2',
+21 silly publish      grunt: '^1.0.1',
+21 silly publish      'grunt-contrib-copy': '^1.0.0',
+21 silly publish      'grunt-mocha-test': '^0.13.2',
+21 silly publish      'grunt-ts': '^6.0.0-beta.16',
+21 silly publish      'grunt-typedoc': '^0.2.4',
+21 silly publish      mocha: '^3.5.0',
+21 silly publish      typedoc: '^0.8.0',
+21 silly publish      typescript: '^2.5.2' },
+21 silly publish   readme: '# JEC CLI Project\r\n\r\nThe CLI Project contains the command-line user interface for managing JEC projects.\r\n\r\n[![][jec-logo]][jec-url]\r\n\r\n## Requirements\r\n\r\nThe JEC CLI Project needs the following system parameters in order to work correctly:\r\n\r\n- Node 6+\r\n- npm 3+\r\n- TypeScript 2+\r\n\r\n## Installation\r\n\r\nSet up the JEC CLI module with:\r\n\r\n```bash\r\n$ [sudo] npm install jec-cli -g\r\n```\r\n\r\n## Usage\r\n\r\n```bash\r\n$ jec help\r\n```\r\n\r\n### Installing a new GlassCat Application Server\r\n\r\n```bash\r\n$ jec glasscat-install\r\n```\r\n\r\nTo start a GlassCat server instance, use:\r\n\r\n```bash\r\n$ <path/to/your/server> glasscat start\r\n```\r\n\r\n## Update Release Notes\r\n\r\n**Current stable release:** [0.0.2](CHANGELOG.md#jec-cli-0.0.2)\r\n \r\nFor a complete listing of release notes for all JEC CLI update releases, see the [CHANGELOG](CHANGELOG.md) file. \r\n\r\n## License\r\nThis JEC CLI Project is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).\r\n\r\n```\r\nCopyright 2016-2017 Pascal ECHEMANN.\r\n\r\nLicensed under the Apache License, Version 2.0 (the "License");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n\r\n    http://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an "AS IS" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\nSee the License for the specific language governing permissions and\r\nlimitations under the License.\r\n```\r\n\r\n[jec-url]: https://github.com/pechemann/JEC\r\n[jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '2a4a310b1c6abbf771d679b611939fa2ec6489ee',
+21 silly publish   _id: 'jec-cli@0.0.2',
+21 silly publish   _shasum: 'f94f34b4a03cc2085056bebd8340dfb868bc89a2',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name jec-cli
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'jec-cli',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'jec-cli',
+26 silly mapToRegistry   name: 'jec-cli',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/jec-cli
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading C:\Users\ActionScript\AppData\Roaming\npm-cache\jec-cli\0.0.2\package.tgz
+30 verbose request uri https://registry.npmjs.org/jec-cli
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 10:52:07
+33 verbose request using bearer token for auth
+34 verbose request id 59c4ee0df9d95ba7
+35 http request PUT https://registry.npmjs.org/jec-cli
+36 http 403 https://registry.npmjs.org/jec-cli
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '91',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Sat, 21 Oct 2017 08:52:09 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-lhr6324-LHR',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1508575928.303868,VS0,VE1250',
+37 verbose headers   vary: 'Accept-Encoding, Accept' }
+38 verbose request invalidating C:\Users\ActionScript\AppData\Roaming\npm-cache\registry.npmjs.org\jec-cli on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: You cannot publish over the previously published version 0.0.2. : jec-cli
+40 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+40 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+40 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid jec-cli
+43 verbose cwd C:\Users\ActionScript\Documents\GitHub\jec-cli
+44 error Windows_NT 10.0.15063
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+46 error node v7.0.0
+47 error npm  v3.10.8
+48 error code E403
+49 error You cannot publish over the previously published version 0.0.2. : jec-cli
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
