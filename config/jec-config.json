@@ -1,8 +1,8 @@
 [
   {
-    "command": "install-glasscat",
-    "alias": "ig",
-    "action": "jec/install-glasscat",
+    "command": "glasscat-install",
+    "alias": "gi",
+    "action": "jec/glasscat-install",
     "description": "installs a new a GlassCat server in the current directory",
     "options": [
       {

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const ConfigParser_1 = require("../../utils/ConfigParser");
 const minimist = require("minimist");
+const path = require("path");
 class AbstractCommandStrategy {
     constructor(version) {
         this.__argv = null;
@@ -29,7 +30,7 @@ class AbstractCommandStrategy {
         let commandName = this.__argv._[0];
         let cmd = this.__commands.get(commandName);
         if (cmd) {
-            const module = require("../../scripts/" + cmd.action);
+            const module = require(path.join("../../scripts", cmd.action));
             module.run(this.__argv);
         }
         else {

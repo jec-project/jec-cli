@@ -14,21 +14,20 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
-import * as childProcess from "child_process";
-import * as path from "path";
+const download:any = require("download-package-tarball");
 
 /**
- * The <code>Start</code> command allows to start a GlassCat server instance.
+ * The <code>TarballUtil</code> class provides utilities for working with
+ * tarball archives.
  */
-export class Start implements Command {
+export class TarballUtil {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>Start</code> instance.
+   * Creates a new <code>TarballUtil</code> instance.
    */
   constructor() {}
 
@@ -37,14 +36,22 @@ export class Start implements Command {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * @inheritDoc
+   * Download the tarball archive at the specified <code>url</code> and extract
+   * that file into the <code>output</code> directory.
+   * 
+   * @param {string} url the URL of the tarball archive to download.
+   * @param {string} output the directory where to extract the archive.
+   * @param {Function} callback the callback function called when the archive
+   *                            is downloaded and extracted.
    */
-  public run(argv:any):void {
-    let scriptPath:string = path.join(
-      process.cwd(),
-      "server/com/onsoft/glasscat/cli/scripts/start-server"
-    );
-    //console.log("startServerAction ------------>", scriptPath);
-    childProcess.fork(scriptPath);
+  public download(url:string, output:string, callback:(err?:any)=>void):void {
+    download( { url: url, dir: output }).then(() => {
+      console.log('file is now downloaded!');
+      callback(null);
+    }).catch(err => {
+      console.log('oh crap the file could not be downloaded properly');
+      console.log(err);
+      callback(err);
+    });
   }
 }

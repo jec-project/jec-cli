@@ -18,6 +18,7 @@ import {CommandStrategy} from "./CommandStrategy";
 import {ConfigParser} from "../../utils/ConfigParser";
 import {CommandConfig} from "../../utils/CommandConfig";
 import * as minimist from "minimist";
+import * as path from "path";
 
 /**
  * <code>AbstractCommandStrategy</code> is the abstract class for the 
@@ -109,8 +110,10 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
     let commandName:string = this.__argv._[0];
     let cmd:CommandConfig = this.__commands.get(commandName);
     //console.log(this.__argv);
-    if(cmd) {
-      const module:any = require("../../scripts/" + cmd.action);
+    if(cmd) {      
+      const module:any = require(
+        path.join("../../scripts", cmd.action)
+      );
       module.run(this.__argv);
     } else {
       console.log("show help");

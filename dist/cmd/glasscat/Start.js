@@ -5,7 +5,7 @@ const path = require("path");
 class Start {
     constructor() { }
     run(argv) {
-        let scriptPath = path.normalize(process.cwd() + "/server/com/onsoft/glasscat/cli/scripts/start-server");
+        let scriptPath = path.join(process.cwd(), "server/com/onsoft/glasscat/cli/scripts/start-server");
         childProcess.fork(scriptPath);
     }
 }

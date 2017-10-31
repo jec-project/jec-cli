@@ -14,12 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandManager} from "./managers/CommandManager";
-import {JecCommandManager} from "./managers/JecCommandManager";
+import {GlassCatInstall} from "../../cmd/jec/GlassCatInstall";
+import {Command} from "../../cmd/Command";
 
-//-> Program Start
-
-let manager:CommandManager = new JecCommandManager("Jec CLI");
-manager.process();
-
-//<- Program End
+/**
+ * Creates a new instance of the <code>GlassCatInstall</code> command and invoke 
+ * its <code>run()</code> method.
+ * 
+ * @param {any} argv the user's input.
+ */
+export function run(argv:any):void {
+  let cmd:Command = new GlassCatInstall();
+  cmd.run(argv);
+}

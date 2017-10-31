@@ -1,5 +1,23 @@
 # JEC CLI Project: Update Release Notes
 
+<a name="jec-cli-0.0.5"></a>
+## **0.0.5** (2017-10-31)
+
+### Bug Fixes
+
+### Features
+
+- Adding the `glasscat-install` command
+
+<a name="jec-cli-0.0.4"></a>
+## **0.0.4** (2017-10-29)
+
+### Bug Fixes
+
+- Fixing some path values to solve linux issues
+
+### Features
+
 <a name="jec-cli-0.0.3"></a>
 ## **0.0.3** (2017-10-21)
 
