@@ -1,40 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const TarballUtil_1 = require("../../utils/TarballUtil");
-const fs = require("fs-extra");
-const path = require("path");
-const childProcess = require("child_process");
+const GlassCatLoader_1 = require("./install/GlassCatLoader");
+const GlassCatExtractor_1 = require("./install/GlassCatExtractor");
+const GlassCatNpmInstaller_1 = require("./install/GlassCatNpmInstaller");
+const GlassCatInstallCleaner_1 = require("./install/GlassCatInstallCleaner");
+const CliLogger_1 = require("../../utils/CliLogger");
+const CFG = require("../../../config/glasscat-install-config.json");
 class GlassCatInstall {
     constructor() { }
     run(argv) {
-        let currentPath = process.cwd();
-        let util = new TarballUtil_1.TarballUtil();
-        let execProcess = null;
-        let tmpFolder = "jec-glasscat";
-        util.download("https://registry.npmjs.org/jec-glasscat/-/jec-glasscat-0.0.7.tgz", currentPath, (e) => {
-            if (e === null) {
-                fs.copy(path.join(currentPath, tmpFolder), currentPath, err => {
-                    if (err)
-                        return console.error(err);
-                    console.log('success!');
-                    fs.remove(tmpFolder).then(() => {
-                        console.log('temp folder removed');
-                    }).catch((reason) => {
-                        console.log('temp folder not removed:' + reason);
-                    });
-                    execProcess = childProcess.exec("npm install");
-                    execProcess.stdout.on("data", function (data) {
-                        console.log(data);
-                    });
-                    execProcess.stderr.on("data", function (data) {
-                        console.log(data);
-                    });
-                    execProcess.on("exit", function (code, signal) {
-                        console.log('child process exited with ' +
-                            `code ${code} and signal ${signal}`);
+        let loader = new GlassCatLoader_1.GlassCatLoader();
+        let extractor = null;
+        let installer = null;
+        let cleaner = null;
+        let logger = CliLogger_1.CliLogger.getInstance();
+        let version = CFG.version;
+        logger.action(`Installing GlassCat ${version}.`);
+        loader.download(version, () => {
+            extractor = new GlassCatExtractor_1.GlassCatExtractor();
+            extractor.move(() => {
+                installer = new GlassCatNpmInstaller_1.GlassCatNpmInstaller();
+                installer.install(() => {
+                    cleaner = new GlassCatInstallCleaner_1.GlassCatInstallCleaner();
+                    cleaner.clean(() => {
+                        logger.action("Server successfully installed.");
                     });
                 });
-            }
+            });
         });
     }
 }

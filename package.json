@@ -1,12 +1,11 @@
 {
   "name": "jec-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "CLI tool for managing JEC projects.",
   "bin": {
     "jec": "./bin/jec",
     "glasscat": "./bin/glasscat"
   },
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pechemann/jec-cli.git"

@@ -14,20 +14,21 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-const download:any = require("download-package-tarball");
+import {TarballUtil} from "../../../utils/TarballUtil";
+import {CliLogger} from "../../../utils/CliLogger";
 
 /**
- * The <code>TarballUtil</code> class provides utilities for working with
- * tarball archives.
+ * The <code>GlassCatLoader</code> class allows to download the GlassCat server
+ * archive from the npm repository.
  */
-export class TarballUtil {
+export class GlassCatLoader {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>TarballUtil</code> instance.
+   * Creates a new <code>GlassCatLoader</code> instance.
    */
   constructor() {}
 
@@ -36,19 +37,33 @@ export class TarballUtil {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Download the tarball archive at the specified <code>url</code> and extract
-   * that file into the <code>output</code> directory.
+   * Downloads the GlassCat server archive from the npm repository. If an error
+   * occurs during the download operation, the <code>process.exit()</code>
+   * method is automatically called with the failure code (<code>1</code>).
    * 
-   * @param {string} url the URL of the tarball archive to download.
-   * @param {string} output the directory where to extract the archive.
+   * @param {string} version the version of the GlassCat server archive to
+   *                         download.
    * @param {Function} callback the callback function called when the archive
    *                            is downloaded and extracted.
    */
-  public download(url:string, output:string, callback:(err?:any)=>void):void {
-    download( { url: url, dir: output }).then(() => {
-      callback(null);
-    }).catch(err => {
-      callback(err);
-    });
+  public download(version:string, callback:Function):void {
+    let logger:CliLogger = CliLogger.getInstance();
+    let util:TarballUtil = new TarballUtil();
+    let uri:string = 
+        `https://registry.npmjs.org/jec-glasscat/-/jec-glasscat-${version}.tgz`;
+    logger.verb("download", uri);
+    util.download(
+      uri,
+      process.cwd(),
+      (e:any)=> {
+        if(e === null) {
+          logger.verb("extract", `jec-glasscat-${version}.tgz`);
+          callback();
+        } else {
+          logger.error(e);
+          process.exit(1);
+        }
+      }
+    );
   }
 }

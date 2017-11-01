@@ -1,7 +1,7 @@
 # JEC CLI Project: Update Release Notes
 
 <a name="jec-cli-0.0.5"></a>
-## **0.0.5** (2017-10-31)
+## **0.0.5** (2017-11-01)
 
 ### Bug Fixes
 

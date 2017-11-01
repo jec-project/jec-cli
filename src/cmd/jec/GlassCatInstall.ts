@@ -15,10 +15,14 @@
 //   limitations under the License.
 
 import {Command} from "../Command";
-import {TarballUtil} from "../../utils/TarballUtil";
-import * as fs from "fs-extra";
-import * as path from "path";
-import * as childProcess from "child_process";
+import {GlassCatLoader} from "./install/GlassCatLoader";
+import {GlassCatExtractor} from "./install/GlassCatExtractor";
+import {GlassCatNpmInstaller} from "./install/GlassCatNpmInstaller";
+import {GlassCatInstallCleaner} from "./install/GlassCatInstallCleaner";
+import {CliLogger} from "../../utils/CliLogger";
+
+// Config file:
+const CFG:any = require("../../../config/glasscat-install-config.json");
 
 /**
  * The <code>GlassCatInstall</code> command allows to install a new GlassCat
@@ -43,36 +47,32 @@ export class GlassCatInstall implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
-    let currentPath:string = process.cwd();
-    let util:TarballUtil = new TarballUtil();
-    let execProcess:childProcess.ChildProcess = null;
-    let tmpFolder:string = "jec-glasscat";
-    util.download(
-      "https://registry.npmjs.org/jec-glasscat/-/jec-glasscat-0.0.7.tgz",
-      currentPath,
-      (e:any)=> {
-        if(e === null) {
-          fs.copy(path.join(currentPath, tmpFolder), currentPath, (err:Error) => {
-            if(err) return console.error(err);
-            console.log('success!');
-            fs.remove(tmpFolder).then(() => {
-              console.log('temp folder removed');
-            }).catch((reason:any) => {
-              console.log('temp folder not removed:' + reason);
-            })
-            execProcess = childProcess.exec("npm install");
-            execProcess.stdout.on("data", function(data) {
-              console.log(data); 
-            });
-            execProcess.stderr.on("data", function(data) {
-              console.log(data); 
-            });
-            execProcess.on("exit", function(code, signal) {
-              console.log('child process exited with ' +
-              `code ${code} and signal ${signal}`); 
-            });
-          });
-        }
+    let loader:GlassCatLoader = new GlassCatLoader();
+    let extractor:GlassCatExtractor = null;
+    let installer:GlassCatNpmInstaller = null;
+    let cleaner:GlassCatInstallCleaner = null;
+    let logger:CliLogger = CliLogger.getInstance();
+    let version:string = CFG.version;
+    logger.action(`Installing GlassCat ${version}.`);
+    loader.download(
+      version,
+      ()=> {
+        extractor = new GlassCatExtractor();
+        extractor.move(
+          ()=> {
+            installer = new GlassCatNpmInstaller();
+            installer.install(
+              ()=> {
+                cleaner = new GlassCatInstallCleaner();
+                cleaner.clean(
+                  ()=> {
+                    logger.action("Server successfully installed.");
+                  }
+                );
+              }
+            );
+          }
+        );
       }
     );
   }
