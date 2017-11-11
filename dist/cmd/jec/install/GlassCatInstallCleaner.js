@@ -6,8 +6,8 @@ const path = require("path");
 class GlassCatInstallCleaner {
     constructor() {
         this.FILES = [
-            ".tscache", "src", ".editorconfig", ".npmignore", "Gruntfile.js",
-            "package.json", "tsconfig.json"
+            ".tscache", "src", "test", "juta", ".editorconfig", ".npmignore",
+            "Gruntfile.js", "package.json", "tsconfig.json"
         ];
     }
     clean(callback) {

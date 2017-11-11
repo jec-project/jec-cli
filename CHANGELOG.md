@@ -1,5 +1,14 @@
 # JEC CLI Project: Update Release Notes
 
+<a name="jec-cli-0.0.6"></a>
+## **0.0.6** (2017-11-05)
+
+### Bug Fixes
+
+### Features
+
+- Adding process to remove `juta` and `test` temp folders at the end of the GlassCat server installation
+
 <a name="jec-cli-0.0.5"></a>
 ## **0.0.5** (2017-11-01)
 

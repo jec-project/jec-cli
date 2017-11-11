@@ -41,8 +41,8 @@ export class GlassCatInstallCleaner {
    * The collection of files and directories to delete.
    */
   private readonly FILES:Array<string> = [
-    ".tscache", "src", ".editorconfig", ".npmignore", "Gruntfile.js",
-    "package.json", "tsconfig.json"
+    ".tscache", "src", "test", "juta", ".editorconfig", ".npmignore", 
+    "Gruntfile.js", "package.json", "tsconfig.json"
   ];
 
   //////////////////////////////////////////////////////////////////////////////
