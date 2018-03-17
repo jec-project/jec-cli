@@ -9,12 +9,12 @@ const CFG = require("../../../config/glasscat-install-config.json");
 class GlassCatInstall {
     constructor() { }
     run(argv) {
-        let loader = new GlassCatLoader_1.GlassCatLoader();
+        const loader = new GlassCatLoader_1.GlassCatLoader();
+        const logger = CliLogger_1.CliLogger.getInstance();
+        const version = CFG.version;
         let extractor = null;
         let installer = null;
         let cleaner = null;
-        let logger = CliLogger_1.CliLogger.getInstance();
-        let version = CFG.version;
         logger.action(`Installing GlassCat ${version}.`);
         loader.download(version, () => {
             extractor = new GlassCatExtractor_1.GlassCatExtractor();

@@ -58,8 +58,8 @@ export class GlassCatInstallCleaner {
    *                            is complete.
    */
   public clean(callback:Function):void {
-    let logger:CliLogger = CliLogger.getInstance();
-    let currentPath:string = process.cwd();
+    const logger:CliLogger = CliLogger.getInstance();
+    const currentPath:string = process.cwd();
     let numFiles:number = this.FILES.length;
     let len:number = numFiles;
     let filePath:string = null;

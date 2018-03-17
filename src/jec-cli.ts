@@ -19,7 +19,7 @@ import {JecCommandManager} from "./managers/JecCommandManager";
 
 //-> Program Start
 
-let manager:CommandManager = new JecCommandManager("Jec CLI");
+const manager:CommandManager = new JecCommandManager("Jec CLI");
 manager.process();
 
 //<- Program End

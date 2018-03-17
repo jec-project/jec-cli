@@ -6,9 +6,9 @@ const CliLogger_1 = require("../../../utils/CliLogger");
 class GlassCatExtractor {
     constructor() { }
     move(callback) {
-        let logger = CliLogger_1.CliLogger.getInstance();
-        let currentPath = process.cwd();
-        let tmpFolder = "jec-glasscat";
+        const logger = CliLogger_1.CliLogger.getInstance();
+        const currentPath = process.cwd();
+        const tmpFolder = "jec-glasscat";
         fs.copy(path.join(currentPath, tmpFolder), currentPath, (err) => {
             if (err) {
                 logger.error(err);

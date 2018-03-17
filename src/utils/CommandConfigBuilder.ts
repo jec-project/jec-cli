@@ -42,7 +42,7 @@ export class CommandConfigBuilder {
    * @return {CommandConfig} a new <code>CommandConfig</code> instance.
    */
   public build(config:any):CommandConfig{
-    let cmd:CommandConfig = new CommandConfig();
+    const cmd:CommandConfig = new CommandConfig();
     cmd.command = config.command;
     cmd.action = config.action;
     cmd.alias = config.alias || null;

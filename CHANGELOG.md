@@ -1,7 +1,16 @@
 # JEC CLI Project: Update Release Notes
 
+<a name="jec-cli-0.0.9"></a>
+## **0.0.9** (2018-03-17)
+
+### Bug Fixes
+
+### Features
+
+- Replacing unset let variables by constants
+
 <a name="jec-cli-0.0.8"></a>
-## **0.0.7** (2017-11-12)
+## **0.0.8** (2017-11-12)
 
 ### Bug Fixes
 

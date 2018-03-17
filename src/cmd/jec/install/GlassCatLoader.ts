@@ -47,9 +47,9 @@ export class GlassCatLoader {
    *                            is downloaded and extracted.
    */
   public download(version:string, callback:Function):void {
-    let logger:CliLogger = CliLogger.getInstance();
-    let util:TarballUtil = new TarballUtil();
-    let uri:string = 
+    const logger:CliLogger = CliLogger.getInstance();
+    const util:TarballUtil = new TarballUtil();
+    const uri:string = 
         `https://registry.npmjs.org/jec-glasscat/-/jec-glasscat-${version}.tgz`;
     logger.verb("download", uri);
     util.download(

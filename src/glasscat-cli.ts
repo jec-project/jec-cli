@@ -19,7 +19,7 @@ import {GlassCatCommandManager} from "./managers/GlassCatCommandManager";
 
 //-> Program Start
 
-let manager:CommandManager = new GlassCatCommandManager("GlassCat CLI");
+const manager:CommandManager = new GlassCatCommandManager("GlassCat CLI");
 manager.process();
 
 //<- Program End

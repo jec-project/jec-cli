@@ -4,9 +4,9 @@ const CommandConfigBuilder_1 = require("./CommandConfigBuilder");
 class ConfigParser {
     constructor() { }
     parse(config) {
-        let cmdCfg = new Array();
+        const cmdCfg = new Array();
+        const builder = new CommandConfigBuilder_1.CommandConfigBuilder();
         let len = config.length;
-        let builder = new CommandConfigBuilder_1.CommandConfigBuilder();
         let cmd = null;
         while (len--) {
             cmd = builder.build(config[0]);

@@ -47,9 +47,9 @@ export class GlassCatExtractor {
    *                            been moved.
    */
   public move(callback:Function):void {
-    let logger:CliLogger = CliLogger.getInstance();
-    let currentPath:string = process.cwd();
-    let tmpFolder:string = "jec-glasscat";
+    const logger:CliLogger = CliLogger.getInstance();
+    const currentPath:string = process.cwd();
+    const tmpFolder:string = "jec-glasscat";
     fs.copy(
       path.join(currentPath, tmpFolder),
       currentPath,

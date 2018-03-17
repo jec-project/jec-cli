@@ -40,7 +40,7 @@ export class Start implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
-    let scriptPath:string = path.join(
+    const scriptPath:string = path.join(
       process.cwd(),
       "server/com/onsoft/glasscat/cli/scripts/start-server"
     );

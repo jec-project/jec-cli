@@ -43,9 +43,9 @@ export class ConfigParser {
    * @return {CommandConfig} an array of <code>CommandConfig</code> objects.
    */
   public parse(config:any):CommandConfig[] {
-    let cmdCfg:CommandConfig[] = new Array<CommandConfig>();
+    const cmdCfg:CommandConfig[] = new Array<CommandConfig>();
+    const builder:CommandConfigBuilder = new CommandConfigBuilder();
     let len:number = config.length;
-    let builder:CommandConfigBuilder = new CommandConfigBuilder();
     let cmd:CommandConfig = null;
     while(len--) {
       cmd = builder.build(config[0]);

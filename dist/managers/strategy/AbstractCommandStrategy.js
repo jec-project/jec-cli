@@ -18,7 +18,7 @@ class AbstractCommandStrategy {
         this.__parser = new ConfigParser_1.ConfigParser();
     }
     initCommands(config) {
-        let cfg = this.__parser.parse(config);
+        const cfg = this.__parser.parse(config);
         let len = cfg.length;
         let cmd = null;
         while (len--) {
@@ -27,8 +27,8 @@ class AbstractCommandStrategy {
         }
     }
     invokeCommand() {
-        let commandName = this.__argv._[0];
-        let cmd = this.__commands.get(commandName);
+        const commandName = this.__argv._[0];
+        const cmd = this.__commands.get(commandName);
         if (cmd) {
             const module = require(path.join("../../scripts", cmd.action));
             module.run(this.__argv);

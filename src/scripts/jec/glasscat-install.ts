@@ -24,6 +24,6 @@ import {Command} from "../../cmd/Command";
  * @param {any} argv the user's input.
  */
 export function run(argv:any):void {
-  let cmd:Command = new GlassCatInstall();
+  const cmd:Command = new GlassCatInstall();
   cmd.run(argv);
 }

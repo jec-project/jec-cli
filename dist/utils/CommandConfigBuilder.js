@@ -4,7 +4,7 @@ const CommandConfig_1 = require("./CommandConfig");
 class CommandConfigBuilder {
     constructor() { }
     build(config) {
-        let cmd = new CommandConfig_1.CommandConfig();
+        const cmd = new CommandConfig_1.CommandConfig();
         cmd.command = config.command;
         cmd.action = config.action;
         cmd.alias = config.alias || null;

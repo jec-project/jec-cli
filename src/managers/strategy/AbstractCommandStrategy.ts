@@ -90,7 +90,7 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
    * @param {any} config the config for this object.
    */
   protected initCommands(config:any):void {
-    let cfg:CommandConfig[] = this.__parser.parse(config);
+    const cfg:CommandConfig[] = this.__parser.parse(config);
     let len:number = cfg.length;
     let cmd:CommandConfig = null;
     while(len--) {
@@ -107,8 +107,8 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
    * @inheritDoc
    */
   public invokeCommand():void {
-    let commandName:string = this.__argv._[0];
-    let cmd:CommandConfig = this.__commands.get(commandName);
+    const commandName:string = this.__argv._[0];
+    const cmd:CommandConfig = this.__commands.get(commandName);
     //console.log(this.__argv);
     if(cmd) {      
       const module:any = require(

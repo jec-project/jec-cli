@@ -47,12 +47,12 @@ export class GlassCatInstall implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
-    let loader:GlassCatLoader = new GlassCatLoader();
+    const loader:GlassCatLoader = new GlassCatLoader();
+    const logger:CliLogger = CliLogger.getInstance();
+    const version:string = CFG.version;
     let extractor:GlassCatExtractor = null;
     let installer:GlassCatNpmInstaller = null;
     let cleaner:GlassCatInstallCleaner = null;
-    let logger:CliLogger = CliLogger.getInstance();
-    let version:string = CFG.version;
     logger.action(`Installing GlassCat ${version}.`);
     loader.download(
       version,

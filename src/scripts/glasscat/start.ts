@@ -24,6 +24,6 @@ import {Command} from "../../cmd/Command";
  * @param {any} argv the user's input.
  */
 export function run(argv:any):void {
-  let cmd:Command = new Start();
+  const cmd:Command = new Start();
   cmd.run(argv);
 }

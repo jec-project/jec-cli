@@ -11,8 +11,8 @@ class GlassCatInstallCleaner {
         ];
     }
     clean(callback) {
-        let logger = CliLogger_1.CliLogger.getInstance();
-        let currentPath = process.cwd();
+        const logger = CliLogger_1.CliLogger.getInstance();
+        const currentPath = process.cwd();
         let numFiles = this.FILES.length;
         let len = numFiles;
         let filePath = null;
