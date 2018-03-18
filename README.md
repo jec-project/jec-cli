@@ -40,7 +40,7 @@ $ <path/to/your/server> glasscat start
 
 ## Update Release Notes
 
-**Current stable release:** [0.1.0](CHANGELOG.md#jec-cli-0.1.0)
+**Current stable release:** [0.1.1](CHANGELOG.md#jec-cli-0.1.1)
  
 For a complete listing of release notes for all JEC CLI update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 
