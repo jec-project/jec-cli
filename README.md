@@ -39,7 +39,7 @@ To start a GlassCat server instance, use:
 $ <path/to/your/server> glasscat start
 ```
 
-## Comming functionalities
+## Coming functionalities
 
 JEC CLI is still under development. The final release will include a large set of tools for working with JEC components and all commands for setting GlassCat servers.
 
