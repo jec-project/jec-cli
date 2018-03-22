@@ -29,6 +29,7 @@ $ jec help
 ### Installing a new GlassCat Application Server
 
 ```bash
+$ cd <path/to/your/server>
 $ jec glasscat-install
 ```
 
@@ -36,6 +37,38 @@ To start a GlassCat server instance, use:
 
 ```bash
 $ <path/to/your/server> glasscat start
+```
+
+## Comming functionalities
+
+JEC CLI is still under development. The final release will include a large set of tools for working with JEC components and all commands for setting GlassCat servers.
+
+The following command list shows some of these functionalities. This list is not limited.
+
+**JEC Commands:**
+
+```bash
+$ jec version
+$ jec help
+$ jec create-jslet
+$ jec create-bootstrap
+```
+
+**GlassCat Commands:**
+
+```bash
+$ glasscat add-server
+$ glasscat remove-server
+$ glasscat add-http-listener
+$ glasscat remove-http-listener
+$ glasscat add-domain
+$ glasscat remove-domain
+$ glasscat set-error-page
+$ glasscat set-log-level
+$ glasscat add-logger
+$ glasscat remove-logger
+$ glasscat add-gmp
+$ glasscat remove-gmp
 ```
 
 ## Update Release Notes
