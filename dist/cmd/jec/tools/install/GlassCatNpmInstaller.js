@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const childProcess = require("child_process");
-const CliLogger_1 = require("../../../utils/CliLogger");
+const CliLogger_1 = require("../../../../utils/CliLogger");
 const DATA = "data";
 const EXIT = "exit";
 const NPM_WARN = "npm";

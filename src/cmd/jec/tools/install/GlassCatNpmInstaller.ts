@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 import * as childProcess from "child_process";
-import {CliLogger} from "../../../utils/CliLogger";
+import {CliLogger} from "../../../../utils/CliLogger";
 
 //--> Stream events constants:
 const DATA:string = "data";
@@ -29,7 +29,6 @@ const COPY_DIRS_TASK:string = "running new task: CopyDirsTask";
 const BUILD_CONSOLE_TASK:string = "running new task: BuildConsoleTask";
 const WEBAPP:string = "webapp";
 const SKIPPING_OPTIONAL_DEPENDENCY:string = "SKIPPING OPTIONAL DEPENDENCY";
-
 
 /**
  * The <code>GlassCatNpmInstaller</code> class allows to manage the GlassCat

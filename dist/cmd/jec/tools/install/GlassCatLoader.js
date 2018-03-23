@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const TarballUtil_1 = require("../../../utils/TarballUtil");
-const CliLogger_1 = require("../../../utils/CliLogger");
+const TarballUtil_1 = require("../../../../utils/TarballUtil");
+const CliLogger_1 = require("../../../../utils/CliLogger");
 class GlassCatLoader {
     constructor() { }
     download(version, callback) {

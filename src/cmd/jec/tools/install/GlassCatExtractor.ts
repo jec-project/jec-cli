@@ -16,7 +16,7 @@
 
 import * as fs from "fs-extra";
 import * as path from "path";
-import {CliLogger} from "../../../utils/CliLogger";
+import {CliLogger} from "../../../../utils/CliLogger";
 
 /**
  * The <code>GlassCatExtractor</code> class copies the GlassCat config files

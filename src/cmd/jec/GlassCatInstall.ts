@@ -15,10 +15,10 @@
 //   limitations under the License.
 
 import {Command} from "../Command";
-import {GlassCatLoader} from "./install/GlassCatLoader";
-import {GlassCatExtractor} from "./install/GlassCatExtractor";
-import {GlassCatNpmInstaller} from "./install/GlassCatNpmInstaller";
-import {GlassCatInstallCleaner} from "./install/GlassCatInstallCleaner";
+import {GlassCatLoader} from "./tools/install/GlassCatLoader";
+import {GlassCatExtractor} from "./tools/install/GlassCatExtractor";
+import {GlassCatNpmInstaller} from "./tools/install/GlassCatNpmInstaller";
+import {GlassCatInstallCleaner} from "./tools/install/GlassCatInstallCleaner";
 import {CliLogger} from "../../utils/CliLogger";
 
 // Config file:

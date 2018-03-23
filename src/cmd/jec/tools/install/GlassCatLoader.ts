@@ -14,8 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {TarballUtil} from "../../../utils/TarballUtil";
-import {CliLogger} from "../../../utils/CliLogger";
+import {TarballUtil} from "../../../../utils/TarballUtil";
+import {CliLogger} from "../../../../utils/CliLogger";
 
 /**
  * The <code>GlassCatLoader</code> class allows to download the GlassCat server

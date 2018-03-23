@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs-extra");
 const path = require("path");
-const CliLogger_1 = require("../../../utils/CliLogger");
+const CliLogger_1 = require("../../../../utils/CliLogger");
 class GlassCatExtractor {
     constructor() { }
     move(callback) {

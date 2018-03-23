@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const GlassCatLoader_1 = require("./install/GlassCatLoader");
-const GlassCatExtractor_1 = require("./install/GlassCatExtractor");
-const GlassCatNpmInstaller_1 = require("./install/GlassCatNpmInstaller");
-const GlassCatInstallCleaner_1 = require("./install/GlassCatInstallCleaner");
+const GlassCatLoader_1 = require("./tools/install/GlassCatLoader");
+const GlassCatExtractor_1 = require("./tools/install/GlassCatExtractor");
+const GlassCatNpmInstaller_1 = require("./tools/install/GlassCatNpmInstaller");
+const GlassCatInstallCleaner_1 = require("./tools/install/GlassCatInstallCleaner");
 const CliLogger_1 = require("../../utils/CliLogger");
 const CFG = require("../../../config/glasscat-install-config.json");
 class GlassCatInstall {

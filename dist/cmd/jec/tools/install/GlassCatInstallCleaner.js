@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CliLogger_1 = require("../../../utils/CliLogger");
+const CliLogger_1 = require("../../../../utils/CliLogger");
 const fs = require("fs-extra");
 const path = require("path");
 class GlassCatInstallCleaner {
