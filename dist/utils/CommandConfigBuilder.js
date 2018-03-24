@@ -9,6 +9,8 @@ class CommandConfigBuilder {
         cmd.action = config.action;
         cmd.alias = config.alias || null;
         cmd.description = config.description || null;
+        cmd.usage = config.usage || null;
+        cmd.signature = config.signature || null;
         return cmd;
     }
 }

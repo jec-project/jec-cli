@@ -1,15 +1,35 @@
 [
   {
+    "command": "help",
+    "alias": "h",
+    "action": "jec/help",
+    "description": "Provides help information for jec commands.",
+    "signature": "[command]"
+  },
+  {
+    "command": "version",
+    "alias": "v",
+    "action": "jec/version",
+    "description": "Gets the current JEC CLI version."
+  },
+  {
+    "command": "glasscat-version",
+    "alias": "gv",
+    "action": "jec/glasscat-version",
+    "description": "Gets the default GlassCat version used to install GlassCat servers."
+  },
+  {
     "command": "glasscat-install",
     "alias": "gi",
     "action": "jec/glasscat-install",
-    "description": "installs a new a GlassCat server in the current directory",
+    "description": "Installs a new a GlassCat server in the current directory.",
+    "signature": "[env]",
     "options": [
       {
-        "name": "environment",
+        "name": "env",
         "alias": "env",
         "required": false,
-        "description": "defines which setup to use for the server environment"
+        "description": "Defines which setup to use for the server environment."
       }
     ]
   }

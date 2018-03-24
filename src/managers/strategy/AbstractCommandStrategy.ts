@@ -19,6 +19,7 @@ import {ConfigParser} from "../../utils/ConfigParser";
 import {CommandConfig} from "../../utils/CommandConfig";
 import * as minimist from "minimist";
 import * as path from "path";
+import { HelpManager } from "../HelpManager";
 
 /**
  * <code>AbstractCommandStrategy</code> is the abstract class for the 
@@ -44,7 +45,7 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * A collection that contains of user's inputs.
+   * A collection that contains user's inputs.
    */
   protected __argv:any = null;
 
@@ -79,7 +80,7 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
     this.__argv = minimist(process.argv.slice(2));
     this.__parser = new ConfigParser();
   }
-  
+
   //////////////////////////////////////////////////////////////////////////////
   // Protected methods
   //////////////////////////////////////////////////////////////////////////////
@@ -96,6 +97,7 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
     while(len--) {
       cmd = cfg[len];
       this.__commands.set(cmd.command, cmd);
+      this.__commands.set(cmd.alias, cmd);
     }
   }
   
@@ -108,15 +110,18 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
    */
   public invokeCommand():void {
     const commandName:string = this.__argv._[0];
-    const cmd:CommandConfig = this.__commands.get(commandName);
-    //console.log(this.__argv);
-    if(cmd) {      
-      const module:any = require(
-        path.join("../../scripts", cmd.action)
-      );
-      module.run(this.__argv);
+    const cmd:CommandConfig = this.__commands.get(commandName.toLowerCase());
+    if(cmd) {
+      if(cmd.command === "help" || cmd.alias === "h") {
+        HelpManager.build().showHelp(this.__argv, this.__commands);
+      } else {
+        const module:any = require(
+          path.join("../../scripts", cmd.action)
+        );
+        module.run(this.__argv);
+      }
     } else {
-      console.log("show help");
+      HelpManager.build().showSummary(this.__commands);
     }
   }
 }

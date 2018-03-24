@@ -54,4 +54,13 @@ export class CommandConfig {
    */
   public description:string = null;
   
+  /**
+   * The command sample usage, or <code>null</code>.
+   */
+  public usage:string = null;
+
+  /**
+   * The command signature, or <code>null</code>.
+   */
+  public signature:string = null;
 }

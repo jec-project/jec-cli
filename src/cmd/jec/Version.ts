@@ -14,43 +14,34 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
-import {CommandConfigBuilder} from "./CommandConfigBuilder";
+import {Command} from "../Command";
+import {CliLogger} from "../../utils/CliLogger";
+
+// Config file:
+const CFG:any = require("../../../package.json");
 
 /**
- * Parses command configuration files. 
+ * The <code>Version</code> command displays the current JEC CLI version.
  */
-export class ConfigParser {
+export class Version implements Command {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>ConfigParser</code> instance.
+   * Creates a new <code>Version</code> instance.
    */
-  constructor(){ }
+  constructor() {}
 
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Parses the specified config and returns an array of
-   * <code>CommandConfig</code> objects.
-   * 
-   * @param {any} config the config object to parse.
-   * @return {CommandConfig} an array of <code>CommandConfig</code> objects.
+   * @inheritDoc
    */
-  public parse(config:any):CommandConfig[] {
-    const cmdCfg:CommandConfig[] = new Array<CommandConfig>();
-    const builder:CommandConfigBuilder = new CommandConfigBuilder();
-    let len:number = config.length;
-    let cmd:CommandConfig = null;
-    while(len--) {
-      cmd = builder.build(config[len]);
-      cmdCfg.push(cmd);
-    }
-    return cmdCfg;
+  public run(argv:any):void {
+    CliLogger.getInstance().log(`${CFG.name} - version: ${CFG.version}`);
   }
 }

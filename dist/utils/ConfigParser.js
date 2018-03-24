@@ -9,7 +9,7 @@ class ConfigParser {
         let len = config.length;
         let cmd = null;
         while (len--) {
-            cmd = builder.build(config[0]);
+            cmd = builder.build(config[len]);
             cmdCfg.push(cmd);
         }
         return cmdCfg;

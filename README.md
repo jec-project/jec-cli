@@ -22,8 +22,16 @@ $ [sudo] npm install jec-cli -g
 
 ## Usage
 
+**JEC commands:**
+
 ```bash
 $ jec help
+```
+
+**GlassCat commands:**
+
+```bash
+$ glasscat help
 ```
 
 ### Installing a new GlassCat Application Server

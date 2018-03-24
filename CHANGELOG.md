@@ -8,6 +8,9 @@
 ### Features
 
 - `jec` package refactoring
+- Adding the `jec version` command
+- Adding the `jec glasscat-version` command
+- Adding the `help` commands
 
 <a name="jec-cli-0.1.1"></a>
 ## **0.1.1** (2018-03-18)

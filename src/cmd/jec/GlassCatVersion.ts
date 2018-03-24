@@ -14,43 +14,37 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
-import {CommandConfigBuilder} from "./CommandConfigBuilder";
+import {Command} from "../Command";
+import {CliLogger} from "../../utils/CliLogger";
+
+// Config file:
+const CFG:any = require("../../../config/glasscat-install-config.json");
 
 /**
- * Parses command configuration files. 
+ * The <code>GlassCatVersion</code> displays the default GlassCat version used
+ * for installing GlassCat servers with the <code>jec glasscat-install</code>
+ * command.
  */
-export class ConfigParser {
+export class GlassCatVersion implements Command {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>ConfigParser</code> instance.
+   * Creates a new <code>GlassCatVersion</code> instance.
    */
-  constructor(){ }
+  constructor() {}
 
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Parses the specified config and returns an array of
-   * <code>CommandConfig</code> objects.
-   * 
-   * @param {any} config the config object to parse.
-   * @return {CommandConfig} an array of <code>CommandConfig</code> objects.
+   * @inheritDoc
    */
-  public parse(config:any):CommandConfig[] {
-    const cmdCfg:CommandConfig[] = new Array<CommandConfig>();
-    const builder:CommandConfigBuilder = new CommandConfigBuilder();
-    let len:number = config.length;
-    let cmd:CommandConfig = null;
-    while(len--) {
-      cmd = builder.build(config[len]);
-      cmdCfg.push(cmd);
-    }
-    return cmdCfg;
+  public run(argv:any):void {
+    const logger:CliLogger = CliLogger.getInstance();
+    logger.log(`Default GlassCat version: ${CFG.version}.`);
   }
 }
