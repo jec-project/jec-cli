@@ -1,6 +1,6 @@
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
-//   Copyright 2016-2017 Pascal ECHEMANN.
+//   Copyright 2016-2018 Pascal ECHEMANN.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -14,19 +14,24 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JecTemplate} from "../JecTemplate";
+import {Command} from "../Command";
+import {CliLogger} from "../../utils/CliLogger";
+import {TemplateBuilder} from "../../template/util/TemplateBuilder";
+import {WebJsletTemplateGenerator} from "../../template/generator/WebJsletTemplateGenerator";
+import * as fs from "fs";
+import * as path from "path";
 
 /**
- * The template used to create jslet files.
+ * The <code>CreateJslet</code> command allows create a custom jslet component.
  */
-export class WebJsletTemplate implements JecTemplate {
-
+export class CreateJslet implements Command {
+  
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>WebJsletTemplate</code> instance.
+   * Creates a new <code>CreateJslet</code> instance.
    */
   constructor() {}
 
@@ -37,28 +42,19 @@ export class WebJsletTemplate implements JecTemplate {
   /**
    * @inheritDoc
    */
-  public getTemplate():string {
-    let template:string = 
-`import {HttpJslet, WebJslet, HttpRequest, HttpResponse} from "jec-exchange";
-import {HttpHeader} from "jec-commons";
-
-/**
- * <% name %>: auto-generated jslet.
- */
-@WebJslet({
-  name: "<% name %>",
-  urlPatterns: [<% urlPatterns %>]
-})
-export class "<% name %> extends HttpJslet {
-  
-  /**
-   * @inheritDoc
-   */
-  public doGet(req:HttpRequest, res:HttpResponse, exit:Function):void {
-    // TODO Auto-generated method stub
-    exit(req, res);
-  }
-}`;
-    return template;
+  public run(argv:any):void {
+    const logger:CliLogger= CliLogger.getInstance();
+    const builder:TemplateBuilder = new TemplateBuilder();
+    const name:string = argv.name;
+    const template:string = builder.build(WebJsletTemplateGenerator, argv);
+    fs.writeFile(`${name}.ts`, template, (err:NodeJS.ErrnoException | null) => {
+      if(err) {
+        logger.error(err);
+      } else {
+        logger.log(
+          `Jslet file with name '${name}.ts' created in '${process.cwd()}'.`
+        );
+      }
+    });
   }
 }

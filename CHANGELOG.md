@@ -12,6 +12,7 @@
 - Adding the `jec glasscat-version` command
 - Adding the `help` command
 - Adding the `jec create-bootstrap` command
+- Adding the `jec create-jslet` command
 
 <a name="jec-cli-0.1.1"></a>
 ## **0.1.1** (2018-03-18)

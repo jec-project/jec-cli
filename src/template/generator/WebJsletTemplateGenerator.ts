@@ -14,19 +14,21 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {TemplateGenerator} from "../TemplateGenerator";
+import {WebJsletTemplate} from "../resource/WebJsletTemplate";
 import {JecTemplate} from "../JecTemplate";
 
 /**
- * The template used to create jslet files.
+ * The template used to create bootstrap files.
  */
-export class WebJsletTemplate implements JecTemplate {
+export class WebJsletTemplateGenerator implements TemplateGenerator {
 
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>WebJsletTemplate</code> instance.
+   * Creates a new <code>WebJsletTemplateGenerator</code> instance.
    */
   constructor() {}
 
@@ -37,28 +39,8 @@ export class WebJsletTemplate implements JecTemplate {
   /**
    * @inheritDoc
    */
-  public getTemplate():string {
-    let template:string = 
-`import {HttpJslet, WebJslet, HttpRequest, HttpResponse} from "jec-exchange";
-import {HttpHeader} from "jec-commons";
-
-/**
- * <% name %>: auto-generated jslet.
- */
-@WebJslet({
-  name: "<% name %>",
-  urlPatterns: [<% urlPatterns %>]
-})
-export class "<% name %> extends HttpJslet {
-  
-  /**
-   * @inheritDoc
-   */
-  public doGet(req:HttpRequest, res:HttpResponse, exit:Function):void {
-    // TODO Auto-generated method stub
-    exit(req, res);
-  }
-}`;
-    return template;
+  public generate(config:any):string {
+    const template:JecTemplate = new WebJsletTemplate();
+    return template.getTemplate();
   }
 }

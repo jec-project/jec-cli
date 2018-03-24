@@ -44,5 +44,23 @@
         "description": "The name of the bootstrap class."
       }
     ]
+  },
+  {
+    "command": "create-jslet",
+    "action": "jec/create-jslet",
+    "description": "Creates a new a JEC jslet class.",
+    "signature": "[name][urlPatterns]",
+    "options": [
+      {
+        "name": "name",
+        "required": true,
+        "description": "The name of the jslet class."
+      },
+      {
+        "name": "urlPatterns",
+        "required": true,
+        "description": "The patterns associated with the jslet to specify URL mapping."
+      }
+    ]
   }
 ]
