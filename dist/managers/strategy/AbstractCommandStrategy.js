@@ -4,6 +4,7 @@ const ConfigParser_1 = require("../../utils/ConfigParser");
 const minimist = require("minimist");
 const path = require("path");
 const HelpManager_1 = require("../HelpManager");
+const CliLogger_1 = require("../../utils/CliLogger");
 class AbstractCommandStrategy {
     constructor(version) {
         this.__argv = null;
@@ -17,6 +18,27 @@ class AbstractCommandStrategy {
         this.__commands = new Map();
         this.__argv = minimist(process.argv.slice(2));
         this.__parser = new ConfigParser_1.ConfigParser();
+    }
+    checkOptions(cmd, config) {
+        const logger = CliLogger_1.CliLogger.getInstance();
+        const options = cmd.options;
+        const commandName = cmd.command;
+        let isValid = true;
+        let len = -1;
+        let option = null;
+        if (options) {
+            len = options.length;
+            while (len--) {
+                option = options[len];
+                if (option.required && !config.hasOwnProperty(option.name)) {
+                    logger.error("Invalid command: 'name' property is required");
+                    logger.log(`\nUse "HELP ${commandName}" to get command properties information.`);
+                    isValid = false;
+                    break;
+                }
+            }
+        }
+        return isValid;
     }
     initCommands(config) {
         const cfg = this.__parser.parse(config);
@@ -36,8 +58,10 @@ class AbstractCommandStrategy {
                 HelpManager_1.HelpManager.build().showHelp(this.__argv, this.__commands);
             }
             else {
-                const module = require(path.join("../../scripts", cmd.action));
-                module.run(this.__argv);
+                if (this.checkOptions(cmd, this.__argv)) {
+                    const module = require(path.join("../../scripts", cmd.action));
+                    module.run(this.__argv);
+                }
             }
         }
         else {

@@ -1,6 +1,6 @@
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
-//   Copyright 2016-2018 Pascal ECHEMANN.
+//   Copyright 2016-2017 Pascal ECHEMANN.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -14,43 +14,33 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
+import {TemplateGenerator} from "../TemplateGenerator";
+import {BootstrapTemplate} from "../resource/BootstrapTemplate";
+import {JecTemplate} from "../JecTemplate";
 
 /**
- * The <code>CommandConfigBuilder</code> class creates new instances of the
- * <code>CommandConfig</code> class. 
+ * The template used to create bootstrap files.
  */
-export class CommandConfigBuilder {
-  
+export class BootstrapTemplateGenerator implements TemplateGenerator {
+
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>CommandConfigBuilder</code> instance.
+   * Creates a new <code>BootstrapTemplateGenerator</code> instance.
    */
-  constructor(){ }
-    
+  constructor() {}
+
   //////////////////////////////////////////////////////////////////////////////
-  // Public properties
+  // Public methods
   //////////////////////////////////////////////////////////////////////////////
-  
+
   /**
-   * Builds and returns a new <code>CommandConfig</code> instance.
-   * 
-   * @param {any} config the config object from which to build the command.
-   * @return {CommandConfig} a new <code>CommandConfig</code> instance.
+   * @inheritDoc
    */
-  public build(config:any):CommandConfig{
-    const cmd:CommandConfig = new CommandConfig();
-    const opts:any[] = config.options;
-    cmd.command = config.command;
-    cmd.action = config.action;
-    cmd.alias = config.alias || null;
-    cmd.description = config.description || null;
-    cmd.usage = config.usage || null;
-    cmd.signature = config.signature || null;
-    if(opts) cmd.options = opts;
-    return cmd;
+  public generate(config:any):string {
+    const template:JecTemplate = new BootstrapTemplate();
+    return template.getTemplate();
   }
 }

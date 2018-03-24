@@ -27,9 +27,21 @@
     "options": [
       {
         "name": "env",
-        "alias": "env",
         "required": false,
         "description": "Defines which setup to use for the server environment."
+      }
+    ]
+  },
+  {
+    "command": "create-bootstrap",
+    "action": "jec/create-bootstrap",
+    "description": "Creates a new a JEC bootstrap class.",
+    "signature": "[name]",
+    "options": [
+      {
+        "name": "name",
+        "required": true,
+        "description": "The name of the bootstrap class."
       }
     ]
   }

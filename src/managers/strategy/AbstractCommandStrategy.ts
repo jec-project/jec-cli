@@ -19,7 +19,9 @@ import {ConfigParser} from "../../utils/ConfigParser";
 import {CommandConfig} from "../../utils/CommandConfig";
 import * as minimist from "minimist";
 import * as path from "path";
-import { HelpManager } from "../HelpManager";
+import {HelpManager} from "../HelpManager";
+import {CliLogger} from "../../utils/CliLogger";
+import {OptionConfig} from "../../utils/OptionConfig";
 
 /**
  * <code>AbstractCommandStrategy</code> is the abstract class for the 
@@ -81,6 +83,39 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
     this.__parser = new ConfigParser();
   }
 
+  /**
+   * Returns a boolean that indicates whether the user's inputs are valid for
+   * the current command (<code>true</code>), or  not (<code>false</code>).
+   * 
+   * @param {CommandConfig} cmd the current command config.
+   * @param {any} config the user's input.
+   * @return {boolean} <code>true</code> whether the user's inputs are valid;
+   *         <code>false</code> otherwise.
+   */
+  private checkOptions(cmd:CommandConfig, config:any):boolean {
+    const logger:CliLogger = CliLogger.getInstance();
+    const options:OptionConfig[] = cmd.options;
+    const commandName:string = cmd.command;
+    let isValid:boolean = true;
+    let len:number = -1;
+    let option:OptionConfig = null;
+    if(options) {
+      len = options.length;
+      while(len--) {
+        option = options[len];
+        if(option.required && !config.hasOwnProperty(option.name)) {
+          logger.error("Invalid command: 'name' property is required");
+          logger.log(
+            `\nUse "HELP ${commandName}" to get command properties information.`
+          );
+          isValid = false;
+          break;
+        }
+      }
+    }
+    return isValid;
+  }
+
   //////////////////////////////////////////////////////////////////////////////
   // Protected methods
   //////////////////////////////////////////////////////////////////////////////
@@ -115,10 +150,12 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
       if(cmd.command === "help" || cmd.alias === "h") {
         HelpManager.build().showHelp(this.__argv, this.__commands);
       } else {
-        const module:any = require(
-          path.join("../../scripts", cmd.action)
-        );
-        module.run(this.__argv);
+        if(this.checkOptions(cmd, this.__argv)) {
+          const module:any = require(
+            path.join("../../scripts", cmd.action)
+          );
+          module.run(this.__argv);
+        }
       }
     } else {
       HelpManager.build().showSummary(this.__commands);

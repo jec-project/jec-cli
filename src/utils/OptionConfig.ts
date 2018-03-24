@@ -14,20 +14,18 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
-
 /**
- * The <code>CommandConfigBuilder</code> class creates new instances of the
- * <code>CommandConfig</code> class. 
+ * The <code>OptionConfig</code> class represents an option for a command 
+ * specified in the configuration file. 
  */
-export class CommandConfigBuilder {
+export class OptionConfig {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>CommandConfigBuilder</code> instance.
+   * Creates a new <code>OptionConfig</code> instance.
    */
   constructor(){ }
     
@@ -36,21 +34,18 @@ export class CommandConfigBuilder {
   //////////////////////////////////////////////////////////////////////////////
   
   /**
-   * Builds and returns a new <code>CommandConfig</code> instance.
-   * 
-   * @param {any} config the config object from which to build the command.
-   * @return {CommandConfig} a new <code>CommandConfig</code> instance.
+   * The name of the option.
    */
-  public build(config:any):CommandConfig{
-    const cmd:CommandConfig = new CommandConfig();
-    const opts:any[] = config.options;
-    cmd.command = config.command;
-    cmd.action = config.action;
-    cmd.alias = config.alias || null;
-    cmd.description = config.description || null;
-    cmd.usage = config.usage || null;
-    cmd.signature = config.signature || null;
-    if(opts) cmd.options = opts;
-    return cmd;
-  }
+  public name:string = null;
+
+  /**
+   * Indicates whether this option is required (<code>true</code>), or not
+   * (<code>false</code>).
+   */
+  public required:boolean = null;
+
+  /**
+   * The option description, or <code>null</code>.
+   */
+  public description:string = null;
 }

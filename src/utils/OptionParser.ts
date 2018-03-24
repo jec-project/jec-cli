@@ -14,43 +14,44 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
+import {OptionConfig} from "./OptionConfig";
+import {CommandConfigBuilder} from "./CommandConfigBuilder";
+import {OptionConfigBuilder} from "./OptionConfigBuilder";
 
 /**
- * The <code>CommandConfigBuilder</code> class creates new instances of the
- * <code>CommandConfig</code> class. 
+ * Parses command configuration files. 
  */
-export class CommandConfigBuilder {
+export class ConfigParser {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>CommandConfigBuilder</code> instance.
+   * Creates a new <code>ConfigParser</code> instance.
    */
   constructor(){ }
-    
+
   //////////////////////////////////////////////////////////////////////////////
-  // Public properties
+  // Public methods
   //////////////////////////////////////////////////////////////////////////////
-  
+
   /**
-   * Builds and returns a new <code>CommandConfig</code> instance.
+   * Parses the specified config and returns an array of
+   * <code>OptionConfig</code> objects.
    * 
-   * @param {any} config the config object from which to build the command.
-   * @return {CommandConfig} a new <code>CommandConfig</code> instance.
+   * @param {any} config the config object to parse.
+   * @return {OptionConfig} an array of <code>OptionConfig</code> objects.
    */
-  public build(config:any):CommandConfig{
-    const cmd:CommandConfig = new CommandConfig();
-    const opts:any[] = config.options;
-    cmd.command = config.command;
-    cmd.action = config.action;
-    cmd.alias = config.alias || null;
-    cmd.description = config.description || null;
-    cmd.usage = config.usage || null;
-    cmd.signature = config.signature || null;
-    if(opts) cmd.options = opts;
-    return cmd;
+  public parse(config:any):OptionConfig[] {
+    const optCfg:OptionConfig[] = new Array<OptionConfig>();
+    const builder:OptionConfigBuilder = new OptionConfigBuilder();
+    let len:number = config.length;
+    let opt:OptionConfig = null;
+    while(len--) {
+      opt = builder.build(config[len]);
+      optCfg.push(opt);
+    }
+    return optCfg;
   }
 }

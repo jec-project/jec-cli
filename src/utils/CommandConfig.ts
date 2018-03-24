@@ -14,6 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {OptionConfig} from "./OptionConfig";
+
 /**
  * The <code>CommandConfig</code> class represents a command specified in the
  * configuration file. 
@@ -63,4 +65,9 @@ export class CommandConfig {
    * The command signature, or <code>null</code>.
    */
   public signature:string = null;
+
+  /**
+   * The list of options for this command, or <code>null</code>.
+   */
+  public options:OptionConfig[] = null;
 }

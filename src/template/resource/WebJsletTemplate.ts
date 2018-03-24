@@ -1,6 +1,6 @@
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
-//   Copyright 2016-2018 Pascal ECHEMANN.
+//   Copyright 2016-2017 Pascal ECHEMANN.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -14,43 +14,51 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
+import {JecTemplate} from "../JecTemplate";
 
 /**
- * The <code>CommandConfigBuilder</code> class creates new instances of the
- * <code>CommandConfig</code> class. 
+ * The template used to create jslet files.
  */
-export class CommandConfigBuilder {
-  
+export class WebJsletTemplate implements JecTemplate {
+
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>CommandConfigBuilder</code> instance.
+   * Creates a new <code>WebJsletTemplate</code> instance.
    */
-  constructor(){ }
-    
+  constructor() {}
+
   //////////////////////////////////////////////////////////////////////////////
-  // Public properties
+  // Public methods
   //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * @inheritDoc
+   */
+  public getTemplate():string {
+    let template:string = 
+`import {HttpJslet, WebJslet, HttpRequest, HttpResponse} from "jec-exchange";
+import {HttpHeader} from "jec-commons";
+
+/**
+ * <% name %>: auto-generated jslet.
+ */
+@WebJslet({
+  name: "<% name %>",
+  urlPatterns: [<% urlPatterns %>]
+})
+export class "<% name %> extends HttpJslet {
   
   /**
-   * Builds and returns a new <code>CommandConfig</code> instance.
-   * 
-   * @param {any} config the config object from which to build the command.
-   * @return {CommandConfig} a new <code>CommandConfig</code> instance.
+   * @inheritDoc
    */
-  public build(config:any):CommandConfig{
-    const cmd:CommandConfig = new CommandConfig();
-    const opts:any[] = config.options;
-    cmd.command = config.command;
-    cmd.action = config.action;
-    cmd.alias = config.alias || null;
-    cmd.description = config.description || null;
-    cmd.usage = config.usage || null;
-    cmd.signature = config.signature || null;
-    if(opts) cmd.options = opts;
-    return cmd;
+  public doGet(req:HttpRequest, res:HttpResponse, exit:Function):void {
+    // TODO Auto-generated method stub
+    exit(req, res, null);
+  }
+}`;
+    return template;
   }
 }

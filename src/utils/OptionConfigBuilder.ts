@@ -14,20 +14,20 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandConfig} from "./CommandConfig";
+import {OptionConfig} from "./OptionConfig";
 
 /**
- * The <code>CommandConfigBuilder</code> class creates new instances of the
+ * The <code>OptionConfigBuilder</code> class creates new instances of the
  * <code>CommandConfig</code> class. 
  */
-export class CommandConfigBuilder {
+export class OptionConfigBuilder {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>CommandConfigBuilder</code> instance.
+   * Creates a new <code>OptionConfigBuilder</code> instance.
    */
   constructor(){ }
     
@@ -36,21 +36,16 @@ export class CommandConfigBuilder {
   //////////////////////////////////////////////////////////////////////////////
   
   /**
-   * Builds and returns a new <code>CommandConfig</code> instance.
+   * Builds and returns a new <code>OptionConfig</code> instance.
    * 
    * @param {any} config the config object from which to build the command.
-   * @return {CommandConfig} a new <code>CommandConfig</code> instance.
+   * @return {OptionConfig} a new <code>OptionConfig</code> instance.
    */
-  public build(config:any):CommandConfig{
-    const cmd:CommandConfig = new CommandConfig();
-    const opts:any[] = config.options;
-    cmd.command = config.command;
-    cmd.action = config.action;
-    cmd.alias = config.alias || null;
-    cmd.description = config.description || null;
-    cmd.usage = config.usage || null;
-    cmd.signature = config.signature || null;
-    if(opts) cmd.options = opts;
-    return cmd;
+  public build(config:any):OptionConfig{
+    const opt:OptionConfig = new OptionConfig();
+    opt.name = config.name;
+    opt.required = config.description || false;
+    opt.description = config.description || null;
+    return opt;
   }
 }

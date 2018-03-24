@@ -8,6 +8,7 @@ class CommandConfig {
         this.description = null;
         this.usage = null;
         this.signature = null;
+        this.options = null;
     }
 }
 exports.CommandConfig = CommandConfig;
