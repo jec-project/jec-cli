@@ -20,7 +20,7 @@ export class "<% name %> extends HttpJslet {
    */
   public doGet(req:HttpRequest, res:HttpResponse, exit:Function):void {
     // TODO Auto-generated method stub
-    exit(req, res, null);
+    exit(req, res);
   }
 }`;
         return template;

@@ -2,7 +2,6 @@
   {
     "command": "help",
     "alias": "h",
-    "action": "jec/help",
     "description": "Provides help information for jec commands.",
     "signature": "[command]"
   },
@@ -36,7 +35,7 @@
     "command": "create-bootstrap",
     "action": "jec/create-bootstrap",
     "description": "Creates a new a JEC bootstrap class.",
-    "signature": "[name]",
+    "signature": "--name",
     "options": [
       {
         "name": "name",
@@ -49,7 +48,7 @@
     "command": "create-jslet",
     "action": "jec/create-jslet",
     "description": "Creates a new a JEC jslet class.",
-    "signature": "[name][urlPatterns]",
+    "signature": "--name --urlPatterns",
     "options": [
       {
         "name": "name",

@@ -17,6 +17,7 @@
 /// <reference path="../../typings/typings.d.ts"/>
 import {CliLogger} from "../utils/CliLogger";
 import {CommandConfig} from "../utils/CommandConfig";
+import { OptionConfig } from "../utils/OptionConfig";
 
 /**
  * <code>HelpManager</code> provides utility methods for managing JEC CLI help.
@@ -51,6 +52,16 @@ export class HelpManager {
    */
   private readonly NEW_LINE:string = "\n\r";
 
+  /**
+   * A plus character (<code>+</code>), that indicates a required parameter.
+   */
+  private readonly REQUIRED:string = "+";
+
+  /**
+   * A minus character (<code>-</code>), that indicates an optional parameter.
+   */
+  private readonly OPTIONAL:string = "-";
+  
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -71,6 +82,20 @@ export class HelpManager {
   }
 
   /**
+   * Returns a string that indicates whether a parameter is required
+   * (<code>+</code>), or optional (<code>-</code>).
+   * 
+   * @param {boolean} required indicates whether a parameter is required
+   *                           (<code>true</code>), or optional
+   *                           (<code>false</code>).
+   * @return {string} <code>+</code> whether the parameter is required;
+   *                  <code>+</code> otherwise.
+   */
+  private getRequiredPrefix(required:boolean):string {
+    return required ? this.REQUIRED : this.OPTIONAL;
+  }
+
+  /**
    * Displays information on the specified command.
    * 
    * @param {CommandConfig} command the command for which to show information.
@@ -78,7 +103,12 @@ export class HelpManager {
   private outputHelpInfo(command:CommandConfig):void {
     const logger:CliLogger = CliLogger.getInstance();
     const commandName:string = command.command.toUpperCase();
+    const options:OptionConfig[] = command.options.reverse();
+    const COLSPACE:number = 20;
     let nextValue:string = null;
+    let len:number = options.length;
+    let option:OptionConfig = null;
+    let gutterSize:number = 0;
     logger.log(`-> ${commandName}${this.NEW_LINE}`);
     logger.log(command.description + this.NEW_LINE);
     nextValue = command.alias;
@@ -87,6 +117,14 @@ export class HelpManager {
     }
     nextValue = command.signature || this.EMPTY_STRING;
     logger.log(`    usage: ${commandName} ${nextValue}${this.NEW_LINE}`);
+    while(len--) {
+      option = options[len];
+      nextValue = option.name;
+      gutterSize = COLSPACE - nextValue.length;
+      logger.log(
+        `    ${this.getRequiredPrefix(option.required)} ${nextValue}${this.getGutter(gutterSize)}${option.description}`
+      );
+    }
   }
 
   //////////////////////////////////////////////////////////////////////////////

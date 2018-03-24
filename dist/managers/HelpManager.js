@@ -6,6 +6,8 @@ class HelpManager {
         this.EMPTY_STRING = "";
         this.WHITESPACE = " ";
         this.NEW_LINE = "\n\r";
+        this.REQUIRED = "+";
+        this.OPTIONAL = "-";
     }
     getGutter(size) {
         let gutter = this.EMPTY_STRING;
@@ -13,10 +15,18 @@ class HelpManager {
             gutter += this.WHITESPACE;
         return gutter;
     }
+    getRequiredPrefix(required) {
+        return required ? this.REQUIRED : this.OPTIONAL;
+    }
     outputHelpInfo(command) {
         const logger = CliLogger_1.CliLogger.getInstance();
         const commandName = command.command.toUpperCase();
+        const options = command.options.reverse();
+        const COLSPACE = 20;
         let nextValue = null;
+        let len = options.length;
+        let option = null;
+        let gutterSize = 0;
         logger.log(`-> ${commandName}${this.NEW_LINE}`);
         logger.log(command.description + this.NEW_LINE);
         nextValue = command.alias;
@@ -25,6 +35,12 @@ class HelpManager {
         }
         nextValue = command.signature || this.EMPTY_STRING;
         logger.log(`    usage: ${commandName} ${nextValue}${this.NEW_LINE}`);
+        while (len--) {
+            option = options[len];
+            nextValue = option.name;
+            gutterSize = COLSPACE - nextValue.length;
+            logger.log(`    ${this.getRequiredPrefix(option.required)} ${nextValue}${this.getGutter(gutterSize)}${option.description}`);
+        }
     }
     static build() {
         const helpManager = new HelpManager();
