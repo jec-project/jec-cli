@@ -16,8 +16,7 @@
 
 import {Command} from "../Command";
 import {CliLogger} from "../../utils/CliLogger";
-import {TemplateBuilder} from "../../template/util/TemplateBuilder";
-import {WebJsletTemplateGenerator} from "../../template/generator/WebJsletTemplateGenerator";
+import {TemplateBuilder, WebJsletTemplateGenerator} from "jec-cli-template";
 import * as fs from "fs";
 import * as path from "path";
 

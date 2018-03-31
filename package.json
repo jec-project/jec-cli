@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/pechemann/jec-cli#readme",
   "dependencies": {
+    "jec-cli-template": "1.0.0",
     "chalk": "^2.1.0",
     "download-package-tarball": "^1.0.7",
     "figlet": "^1.2.0",
