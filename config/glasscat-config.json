@@ -15,8 +15,7 @@
       {
         "name": "env",
         "alias": "env",
-        "required": false,
-        "description": "defines which setup to use for the server environment"
+        "description": "Defines which setup to use for the server environment."
       }
     ]
   }
