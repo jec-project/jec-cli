@@ -35,12 +35,20 @@
     "command": "create-bootstrap",
     "action": "jec/create-bootstrap",
     "description": "Creates a new a JEC bootstrap class.",
-    "signature": "--name",
+    "signature": "--name [--index] [--disabled]",
     "options": [
       {
         "name": "name",
         "required": true,
         "description": "The name of the bootstrap class."
+      },
+      {
+        "name": "index",
+        "description": "Specifies the position of the bootstrap class instance in the bootstrap files execution queue."
+      },
+      {
+        "name": "disabled",
+        "description": "Indicates wheter the bootstrap class instance is ignored at the server start (true), or not (false)."
       }
     ]
   },
@@ -48,7 +56,7 @@
     "command": "create-jslet",
     "action": "jec/create-jslet",
     "description": "Creates a new a JEC jslet class.",
-    "signature": "--name --urlPatterns",
+    "signature": "--name --urlPatterns [--template]",
     "options": [
       {
         "name": "name",
@@ -59,6 +67,10 @@
         "name": "urlPatterns",
         "required": true,
         "description": "The patterns associated with the jslet to specify URL mapping."
+      },
+      {
+        "name": "template",
+        "description": "The template file associated with this jslet."
       }
     ]
   }

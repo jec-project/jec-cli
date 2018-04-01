@@ -99,12 +99,14 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
     let isValid:boolean = true;
     let len:number = -1;
     let option:OptionConfig = null;
+    let propName:string = null;
     if(options) {
       len = options.length;
       while(len--) {
         option = options[len];
-        if(option.required && !config.hasOwnProperty(option.name)) {
-          logger.error("Invalid command: 'name' property is required");
+        propName = option.name;
+        if(option.required && !config.hasOwnProperty(propName)) {
+          logger.error(`Invalid command: "${propName}" property is required`);
           logger.log(
             `\nUse "HELP ${commandName}" to get command properties information.`
           );
