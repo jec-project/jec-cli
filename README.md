@@ -56,10 +56,8 @@ The following command list shows some of these functionalities. This list is not
 **JEC Commands:**
 
 ```bash
-$ jec version
-$ jec help
-$ jec create-jslet
-$ jec create-bootstrap
+$ jec create-resource
+$ jec create-test-suite
 ```
 
 **GlassCat Commands:**
