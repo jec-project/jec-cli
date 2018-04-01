@@ -16,9 +16,7 @@
 
 import {Command} from "../Command";
 import {CliLogger} from "../../utils/CliLogger";
-import {TemplateBuilder, BootstrapTemplateGenerator} from "jec-cli-template";
-import * as fs from "fs";
-import * as path from "path";
+import {BootstrapTemplateGenerator, FileWriter} from "jec-cli-template";
 
 /**
  * The <code>CreateBootstrap</code> command allows create a custom bootstrap
@@ -43,18 +41,14 @@ export class CreateBootstrap implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
+    const writer:FileWriter = new FileWriter();
     const logger:CliLogger= CliLogger.getInstance();
-    const builder:TemplateBuilder = new TemplateBuilder();
-    const name:string = argv.name;
-    const template:string = builder.build(BootstrapTemplateGenerator, argv);
-    fs.writeFile(`${name}.ts`, template, (err:NodeJS.ErrnoException | null) => {
-      if(err) {
-        logger.error(err);
-      } else {
-        logger.log(
-          `Bootstrap file with name '${name}.ts' created in '${process.cwd()}'.`
-        );
-      }
-    });
+    writer.write(BootstrapTemplateGenerator,
+                 argv, (err:NodeJS.ErrnoException | null) => {
+      err ? logger.error(err) :
+            logger.log(
+     `Bootstrap file with name '${argv.name}.ts' created in '${process.cwd()}'.`
+            );
+      });
   }
 }
