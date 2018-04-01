@@ -10,12 +10,13 @@
     "alias": null,
     "action": "glasscat/start",
     "description": "starts a GlassCat server",
-    "signature": "[--env]",
+    "signature": "[env]",
     "options": [
       {
         "name": "env",
         "alias": "env",
-        "description": "Defines which setup to use for the server environment."
+        "required": false,
+        "description": "defines which setup to use for the server environment"
       }
     ]
   }
