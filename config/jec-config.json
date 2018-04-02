@@ -22,12 +22,15 @@
     "alias": "gi",
     "action": "jec/glasscat-install",
     "description": "Installs a new a GlassCat server in the current directory.",
-    "signature": "[env]",
+    "signature": "[--version] [--env]",
     "options": [
       {
         "name": "env",
-        "required": false,
         "description": "Defines which setup to use for the server environment."
+      },
+      {
+        "name": "version",
+        "description": "Defines a specific version of the GlassCat server to install."
       }
     ]
   },
