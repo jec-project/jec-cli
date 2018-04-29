@@ -102,5 +102,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[jec-url]: https://jecproject.org
+[jec-url]: http://jecproject.org
 [jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png
