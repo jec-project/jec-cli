@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pechemann/jec-cli.git"
+    "url": "git+https://github.com/jec-project/jec-cli.git"
   },
   "keywords": [
     "JEC",
@@ -23,9 +23,9 @@
   "author": "Pascal ECHEMANN",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/pechemann/jec-cli/issues"
+    "url": "https://github.com/jec-project/jec-cli/issues"
   },
-  "homepage": "https://github.com/pechemann/jec-cli#readme",
+  "homepage": "https://github.com/jec-project/jec-cli#readme",
   "dependencies": {
     "jec-cli-template": "1.0.0",
     "chalk": "^2.1.0",

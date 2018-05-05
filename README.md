@@ -103,4 +103,4 @@ limitations under the License.
 ```
 
 [jec-url]: http://jecproject.org
-[jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png
+[jec-logo]: https://raw.githubusercontent.com/jec-project/JEC/master/assets/jec-logos/jec-logo.png
