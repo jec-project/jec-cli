@@ -1,5 +1,15 @@
 # JEC CLI Project: Update Release Notes
 
+
+<a name="jec-cli-0.1.3"></a>
+## **0.1.3** (2018-05-09)
+
+### Bug Fixes
+
+### Features
+
+- Adding command for creating JEC interfaces
+
 <a name="jec-cli-0.1.2"></a>
 ## **0.1.2** (2018-03-23)
 

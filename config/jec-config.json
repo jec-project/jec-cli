@@ -76,5 +76,22 @@
         "description": "The template file associated with this jslet."
       }
     ]
+  },
+  {
+    "command": "create-interface",
+    "action": "jec/create-interface",
+    "description": "Creates a new a JEC interface.",
+    "signature": "--name [--pkg]",
+    "options": [
+      {
+        "name": "name",
+        "required": true,
+        "description": "The name of the interface."
+      },
+      {
+        "name": "pkg",
+        "description": "The name of the package for this interface."
+      }
+    ]
   }
 ]
