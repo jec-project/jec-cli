@@ -3,14 +3,14 @@
     "command": "help",
     "alias": "h",
     "description": "Provides help information for glasscat commands.",
-    "signature": "[command]"
+    "signature": "[--command]"
   },
   {
     "command": "start",
     "alias": null,
     "action": "glasscat/start",
-    "description": "starts a GlassCat server",
-    "signature": "[env]",
+    "description": "Starts a GlassCat server",
+    "signature": "[--env]",
     "options": [
       {
         "name": "env",

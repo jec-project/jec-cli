@@ -9,6 +9,7 @@
 ### Features
 
 - Adding command for creating JEC interfaces
+- Adding command for creating JUTA test suites
 
 <a name="jec-cli-0.1.2"></a>
 ## **0.1.2** (2018-03-23)

@@ -93,5 +93,18 @@
         "description": "The name of the package for this interface."
       }
     ]
+  },
+  {
+    "command": "create-test-suite",
+    "alias": null,
+    "action": "jec/create-test-suite",
+    "description": "Creates a JUTA test suite for the specified class",
+    "signature": "--class",
+    "options": [
+      {
+        "name": "class",
+        "description": "Indicates the class for which to create the test suite."
+      }
+    ]
   }
 ]
