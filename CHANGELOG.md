@@ -1,5 +1,13 @@
 # JEC CLI Project: Update Release Notes
 
+<a name="jec-cli-0.2.0"></a>
+## **0.1.3** (2018-05-20)
+
+### Bug Fixes
+
+### Features
+
+- Adding support for the new JEC TOOL CLI module
 
 <a name="jec-cli-0.1.3"></a>
 ## **0.1.3** (2018-05-09)

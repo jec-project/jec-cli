@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
+import {Command} from "jec-tool-cli";
 import * as childProcess from "child_process";
 import * as path from "path";
 

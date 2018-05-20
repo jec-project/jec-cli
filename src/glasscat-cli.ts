@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandManager} from "./managers/CommandManager";
+import {CommandManager} from "jec-tool-cli";
 import {GlassCatCommandManager} from "./managers/GlassCatCommandManager";
 
 //-> Program Start

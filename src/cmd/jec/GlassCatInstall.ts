@@ -14,12 +14,11 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
+import {Command, CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 import {GlassCatLoader} from "./tools/install/GlassCatLoader";
 import {GlassCatExtractor} from "./tools/install/GlassCatExtractor";
 import {GlassCatNpmInstaller} from "./tools/install/GlassCatNpmInstaller";
 import {GlassCatInstallCleaner} from "./tools/install/GlassCatInstallCleaner";
-import {CliLogger} from "../../utils/CliLogger";
 
 // Config file:
 const CFG:any = require("../../../config/glasscat-install-config.json");
@@ -48,7 +47,7 @@ export class GlassCatInstall implements Command {
    */
   public run(argv:any):void {
     const loader:GlassCatLoader = new GlassCatLoader();
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const version:string = CFG.version;
     let extractor:GlassCatExtractor = null;
     let installer:GlassCatNpmInstaller = null;

@@ -1,6 +1,6 @@
 {
   "name": "jec-cli",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "CLI tool for managing JEC projects.",
   "bin": {
     "jec": "./bin/jec",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/jec-project/jec-cli#readme",
   "dependencies": {
+    "jec-tool-cli": "^1.0.0",
     "chalk": "^2.1.0",
     "download-package-tarball": "^1.0.7",
     "figlet": "^1.2.0",

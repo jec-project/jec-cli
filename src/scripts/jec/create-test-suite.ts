@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../../cmd/Command";
+import {Command} from "jec-tool-cli";
 import {CreateTestSuite} from "../../cmd/jec/CreateTestSuite";
 
 /**

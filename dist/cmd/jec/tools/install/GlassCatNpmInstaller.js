@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const childProcess = require("child_process");
-const CliLogger_1 = require("../../../../utils/CliLogger");
+const jec_tool_cli_1 = require("jec-tool-cli");
 const DATA = "data";
 const EXIT = "exit";
 const NPM_WARN = "npm";
@@ -16,7 +16,7 @@ const SKIPPING_OPTIONAL_DEPENDENCY = "SKIPPING OPTIONAL DEPENDENCY";
 class GlassCatNpmInstaller {
     constructor() { }
     install(callback) {
-        let logger = CliLogger_1.CliLogger.getInstance();
+        let logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         let execProcess = null;
         let message = null;
         logger.action("Installing packages for tooling via npm.");

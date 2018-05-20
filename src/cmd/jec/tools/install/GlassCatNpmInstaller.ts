@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 import * as childProcess from "child_process";
-import {CliLogger} from "../../../../utils/CliLogger";
+import {CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 
 //--> Stream events constants:
 const DATA:string = "data";
@@ -58,7 +58,7 @@ export class GlassCatNpmInstaller {
    *                            is complete.
    */
   public install(callback:Function):void {
-    let logger:CliLogger = CliLogger.getInstance();
+    let logger:CliLogger = ConsoleCliLogger.getInstance();
     let execProcess:childProcess.ChildProcess = null;
     let message:string = null;
     logger.action("Installing packages for tooling via npm.");

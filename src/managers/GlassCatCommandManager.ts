@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 import {AbstractCommandManager} from "./AbstractCommandManager";
-import {CommandManager} from "./CommandManager";
+import {CommandManager} from "jec-tool-cli";
 import {GlassCatCommandStrategy} from "./strategy/GlassCatCommandStrategy";
 
 /**

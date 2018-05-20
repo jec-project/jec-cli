@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const TarballUtil_1 = require("../../../../utils/TarballUtil");
-const CliLogger_1 = require("../../../../utils/CliLogger");
+const jec_tool_cli_1 = require("jec-tool-cli");
 class GlassCatLoader {
     constructor() { }
     download(version, callback) {
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const util = new TarballUtil_1.TarballUtil();
         const uri = `https://registry.npmjs.org/jec-glasscat/-/jec-glasscat-${version}.tgz`;
         logger.verb("download", uri);

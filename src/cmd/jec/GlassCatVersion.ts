@@ -14,8 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
-import {CliLogger} from "../../utils/CliLogger";
+import {Command, CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 
 // Config file:
 const CFG:any = require("../../../config/glasscat-install-config.json");
@@ -44,7 +43,7 @@ export class GlassCatVersion implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     logger.log(`Default GlassCat version: ${CFG.version}.`);
   }
 }

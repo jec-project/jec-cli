@@ -14,8 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {Command} from "jec-tool-cli";
 import {CreateInterface} from "../../cmd/jec/CreateInterface";
-import {Command} from "../../cmd/Command";
 
 /**
  * Creates a new instance of the <code>CreateInterface</code> command and invoke 

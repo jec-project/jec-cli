@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CliLogger_1 = require("../../utils/CliLogger");
+const jec_tool_cli_1 = require("jec-tool-cli");
 const fs = require("fs");
 const fsExtra = require("fs-extra");
 const path = require("path");
@@ -77,7 +77,7 @@ class CreateTestSuite {
         });
     }
     run(argv) {
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         let dto = this.createDto(argv);
         this.loadClass(dto, (err, data) => {
             if (err)

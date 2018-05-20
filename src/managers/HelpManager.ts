@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 /// <reference path="../../typings/typings.d.ts"/>
-import {CliLogger} from "../utils/CliLogger";
+import {CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 import {CommandConfig} from "../utils/CommandConfig";
 import { OptionConfig } from "../utils/OptionConfig";
 
@@ -101,7 +101,7 @@ export class HelpManager {
    * @param {CommandConfig} command the command for which to show information.
    */
   private outputHelpInfo(command:CommandConfig):void {
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const commandName:string = command.command.toUpperCase();
     const options:OptionConfig[] = command.options.reverse();
     const COLSPACE:number = 20;
@@ -151,7 +151,7 @@ export class HelpManager {
   public showSummary(commandList:Map<string, CommandConfig>):void {
     const it:IterableIterator<[string, CommandConfig]> =
                                                  commandList[Symbol.iterator]();
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const COLSPACE:number = 25;
     let gutterSize:number = 0;
     let cmd:CommandConfig = null;

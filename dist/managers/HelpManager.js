@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CliLogger_1 = require("../utils/CliLogger");
+const jec_tool_cli_1 = require("jec-tool-cli");
 class HelpManager {
     constructor() {
         this.EMPTY_STRING = "";
@@ -19,7 +19,7 @@ class HelpManager {
         return required ? this.REQUIRED : this.OPTIONAL;
     }
     outputHelpInfo(command) {
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const commandName = command.command.toUpperCase();
         const options = command.options.reverse();
         const COLSPACE = 20;
@@ -48,7 +48,7 @@ class HelpManager {
     }
     showSummary(commandList) {
         const it = commandList[Symbol.iterator]();
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const COLSPACE = 25;
         let gutterSize = 0;
         let cmd = null;

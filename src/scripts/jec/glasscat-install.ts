@@ -14,8 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {Command} from "jec-tool-cli";
 import {GlassCatInstall} from "../../cmd/jec/GlassCatInstall";
-import {Command} from "../../cmd/Command";
 
 /**
  * Creates a new instance of the <code>GlassCatInstall</code> command and invoke 

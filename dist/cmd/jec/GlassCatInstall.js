@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const jec_tool_cli_1 = require("jec-tool-cli");
 const GlassCatLoader_1 = require("./tools/install/GlassCatLoader");
 const GlassCatExtractor_1 = require("./tools/install/GlassCatExtractor");
 const GlassCatNpmInstaller_1 = require("./tools/install/GlassCatNpmInstaller");
 const GlassCatInstallCleaner_1 = require("./tools/install/GlassCatInstallCleaner");
-const CliLogger_1 = require("../../utils/CliLogger");
 const CFG = require("../../../config/glasscat-install-config.json");
 class GlassCatInstall {
     constructor() { }
     run(argv) {
         const loader = new GlassCatLoader_1.GlassCatLoader();
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const version = CFG.version;
         let extractor = null;
         let installer = null;

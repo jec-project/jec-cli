@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CliLogger} from "../../../../utils/CliLogger";
+import {CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 import * as fs from "fs-extra";
 import * as path from "path";
 
@@ -58,7 +58,7 @@ export class GlassCatInstallCleaner {
    *                            is complete.
    */
   public clean(callback:Function):void {
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const currentPath:string = process.cwd();
     let numFiles:number = this.FILES.length;
     let len:number = numFiles;

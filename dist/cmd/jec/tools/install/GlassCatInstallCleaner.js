@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CliLogger_1 = require("../../../../utils/CliLogger");
+const jec_tool_cli_1 = require("jec-tool-cli");
 const fs = require("fs-extra");
 const path = require("path");
 class GlassCatInstallCleaner {
@@ -11,7 +11,7 @@ class GlassCatInstallCleaner {
         ];
     }
     clean(callback) {
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const currentPath = process.cwd();
         let numFiles = this.FILES.length;
         let len = numFiles;

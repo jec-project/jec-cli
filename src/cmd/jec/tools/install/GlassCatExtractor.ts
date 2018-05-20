@@ -16,7 +16,7 @@
 
 import * as fs from "fs-extra";
 import * as path from "path";
-import {CliLogger} from "../../../../utils/CliLogger";
+import {CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 
 /**
  * The <code>GlassCatExtractor</code> class copies the GlassCat config files
@@ -47,7 +47,7 @@ export class GlassCatExtractor {
    *                            been moved.
    */
   public move(callback:Function):void {
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const currentPath:string = process.cwd();
     const tmpFolder:string = "jec-glasscat";
     fs.copy(

@@ -20,7 +20,7 @@ import {CommandConfig} from "../../utils/CommandConfig";
 import * as minimist from "minimist";
 import * as path from "path";
 import {HelpManager} from "../HelpManager";
-import {CliLogger} from "../../utils/CliLogger";
+import {CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 import {OptionConfig} from "../../utils/OptionConfig";
 
 /**
@@ -93,7 +93,7 @@ export abstract class AbstractCommandStrategy implements CommandStrategy {
    *         <code>false</code> otherwise.
    */
   private checkOptions(cmd:CommandConfig, config:any):boolean {
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const options:OptionConfig[] = cmd.options;
     const commandName:string = cmd.command;
     let isValid:boolean = true;

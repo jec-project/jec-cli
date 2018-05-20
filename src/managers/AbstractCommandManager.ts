@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 /// <reference path="../../typings/typings.d.ts"/>
-import {CommandManager} from "./CommandManager";
+import {CommandManager} from "jec-tool-cli";
 import {CommandStrategy} from "./strategy/CommandStrategy";
 import * as updateNotifier from "update-notifier";
 

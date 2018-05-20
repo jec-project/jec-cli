@@ -14,8 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
-import {CliLogger} from "../../utils/CliLogger";
+import {Command, CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 import {WebJsletTemplateGenerator, FileWriter} from "jec-cli-template";
 
 /**
@@ -41,7 +40,7 @@ export class CreateJslet implements Command {
    */
   public run(argv:any):void {
     const writer:FileWriter = new FileWriter();
-    const logger:CliLogger= CliLogger.getInstance();
+    const logger:CliLogger= ConsoleCliLogger.getInstance();
     writer.write(WebJsletTemplateGenerator,
                  argv, (err:NodeJS.ErrnoException | null) => {
       err ?  logger.error(err) :

@@ -14,8 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
-import {CliLogger} from "../../utils/CliLogger";
+import {Command, CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 import * as fs from "fs";
 import * as fsExtra from "fs-extra";
 import * as path from "path";
@@ -187,7 +186,7 @@ export class CreateTestSuite implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
-    const logger:CliLogger= CliLogger.getInstance();
+    const logger:CliLogger= ConsoleCliLogger.getInstance();
     let dto:TestSuiteDto = this.createDto(argv);
     this.loadClass(dto, (err:NodeJS.ErrnoException, data:any) => {
       if(err) logger.error(err);

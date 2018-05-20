@@ -14,8 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Command} from "../Command";
-import {CliLogger} from "../../utils/CliLogger";
+import {Command} from "jec-tool-cli";
+import {ConsoleCliLogger} from "jec-tool-cli";
 
 // Config file:
 const CFG:any = require("../../../package.json");
@@ -42,6 +42,6 @@ export class Version implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
-    CliLogger.getInstance().log(`${CFG.name} - version: ${CFG.version}`);
+    ConsoleCliLogger.getInstance().log(`${CFG.name} - version: ${CFG.version}`);
   }
 }

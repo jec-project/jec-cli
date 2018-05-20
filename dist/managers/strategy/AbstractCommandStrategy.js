@@ -4,7 +4,7 @@ const ConfigParser_1 = require("../../utils/ConfigParser");
 const minimist = require("minimist");
 const path = require("path");
 const HelpManager_1 = require("../HelpManager");
-const CliLogger_1 = require("../../utils/CliLogger");
+const jec_tool_cli_1 = require("jec-tool-cli");
 class AbstractCommandStrategy {
     constructor(version) {
         this.__argv = null;
@@ -20,7 +20,7 @@ class AbstractCommandStrategy {
         this.__parser = new ConfigParser_1.ConfigParser();
     }
     checkOptions(cmd, config) {
-        const logger = CliLogger_1.CliLogger.getInstance();
+        const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const options = cmd.options;
         const commandName = cmd.command;
         let isValid = true;

@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 import {TarballUtil} from "../../../../utils/TarballUtil";
-import {CliLogger} from "../../../../utils/CliLogger";
+import {CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 
 /**
  * The <code>GlassCatLoader</code> class allows to download the GlassCat server
@@ -47,7 +47,7 @@ export class GlassCatLoader {
    *                            is downloaded and extracted.
    */
   public download(version:string, callback:Function):void {
-    const logger:CliLogger = CliLogger.getInstance();
+    const logger:CliLogger = ConsoleCliLogger.getInstance();
     const util:TarballUtil = new TarballUtil();
     const uri:string = 
         `https://registry.npmjs.org/jec-glasscat/-/jec-glasscat-${version}.tgz`;
