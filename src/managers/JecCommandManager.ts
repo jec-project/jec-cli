@@ -14,8 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {AbstractCommandManager} from "./AbstractCommandManager";
-import {CommandManager} from "jec-tool-cli";
+import {CommandManager, AbstractCommandManager} from "jec-tool-cli";
 import {JecCommandStrategy} from "./strategy/JecCommandStrategy";
 
 /**

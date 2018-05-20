@@ -14,9 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/// <reference path="../../../typings/typings.d.ts"/>
-import {AbstractCommandStrategy} from "./AbstractCommandStrategy";
-import {CommandStrategy} from "./CommandStrategy";
+import {CommandStrategy, AbstractCommandStrategy} from "jec-tool-cli";
 
 // Config file:
 const CFG:any = require("../../../config/glasscat-config.json");
