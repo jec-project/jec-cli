@@ -29,7 +29,7 @@
   "dependencies": {
     "download-package-tarball": "^1.0.7",
     "fs-extra": "^4.0.2",
-    "jec-tool-cli": "^1.0.0",
+    "jec-tool-cli": "^1.0.1",
     "typescript-parser": "^2.4.0"
   },
   "devDependencies": {
