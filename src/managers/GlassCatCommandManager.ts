@@ -16,6 +16,7 @@
 
 import {CommandManager, AbstractCommandManager} from "jec-tool-cli";
 import {GlassCatCommandStrategy} from "./strategy/GlassCatCommandStrategy";
+import * as path from "path";
 
 /**
  * The <code>GlassCatCommandManager</code> class runs specific GlassCat commands
@@ -34,7 +35,7 @@ export class GlassCatCommandManager extends AbstractCommandManager
    * @param {string} processTitle the name of the  current process.
    */
   constructor(processTitle:string) {
-    super(processTitle);
+    super(processTitle, path.resolve(__dirname, "../../package.json"));
     this.initManager();
   }
   

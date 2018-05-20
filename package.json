@@ -27,9 +27,7 @@
   },
   "homepage": "https://github.com/jec-project/jec-cli#readme",
   "dependencies": {
-    "chalk": "^2.1.0",
     "download-package-tarball": "^1.0.7",
-    "figlet": "^1.2.0",
     "fs-extra": "^4.0.2",
     "jec-tool-cli": "^1.0.0",
     "typescript-parser": "^2.4.0"

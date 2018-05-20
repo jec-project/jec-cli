@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {CommandStrategy, AbstractCommandStrategy} from "jec-tool-cli";
+import * as path from "path";
 
 // Config file:
 const CFG:any = require("../../../config/glasscat-config.json");
@@ -37,13 +38,22 @@ export class GlassCatCommandStrategy extends AbstractCommandStrategy
    */
   constructor(version:string) {
     super(version);
-    this.initCommands(CFG);
+    this.initStrategy();
+    
   }
   
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
 
+  /**
+   * Initialises this object. This method is called by the constructor function.
+   */
+  private initStrategy():void {
+    this.setScriptPath(path.resolve(__dirname, "../../scripts"));
+    this.initCommands(CFG);
+  }
+  
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////

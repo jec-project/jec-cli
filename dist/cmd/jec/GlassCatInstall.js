@@ -5,10 +5,10 @@ const GlassCatLoader_1 = require("./tools/install/GlassCatLoader");
 const GlassCatExtractor_1 = require("./tools/install/GlassCatExtractor");
 const GlassCatNpmInstaller_1 = require("./tools/install/GlassCatNpmInstaller");
 const GlassCatInstallCleaner_1 = require("./tools/install/GlassCatInstallCleaner");
-const CFG = require("../../../config/glasscat-install-config.json");
 class GlassCatInstall {
     constructor() { }
     run(argv) {
+        const CFG = require("../../../config/glasscat-install-config.json");
         const loader = new GlassCatLoader_1.GlassCatLoader();
         const logger = jec_tool_cli_1.ConsoleCliLogger.getInstance();
         const version = CFG.version;

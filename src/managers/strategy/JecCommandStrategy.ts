@@ -14,12 +14,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandStrategy, AbstractCommandStrategy} from "jec-tool-cli";
-import * as chalk from "chalk";
-import * as figlet from "figlet";
-
-// Config file:
-const CFG:any = require("../../../config/jec-config.json");
+import {CommandStrategy, AbstractCommandStrategy,
+        SplashScreenBuilder} from "jec-tool-cli";
+import * as path from "path";
 
 /**
  * The <code>JecCommandStrategy</code> class invokes specific JEC commands
@@ -50,11 +47,9 @@ export class JecCommandStrategy extends AbstractCommandStrategy
    * Initialises this object. This method is called by the constructor function.
    */
   private initStrategy():void {
-    console.log(
-      chalk.yellow(
-        figlet.textSync("JEC CLI", { horizontalLayout: "full" })
-      )
-    );
+    const CFG:any = require("../../../config/jec-config.json");
+    this.setScriptPath(path.resolve(__dirname, "../../scripts"));
+    console.log(SplashScreenBuilder.build("JEC CLI"));
     this.initCommands(CFG);
   }
   

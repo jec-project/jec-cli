@@ -44,3 +44,5 @@ src/**/*.js
 
 # Ignore JavaScript files in test folder
 test/**/*.js
+
+package-lock.json

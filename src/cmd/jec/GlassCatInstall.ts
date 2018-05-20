@@ -20,9 +20,6 @@ import {GlassCatExtractor} from "./tools/install/GlassCatExtractor";
 import {GlassCatNpmInstaller} from "./tools/install/GlassCatNpmInstaller";
 import {GlassCatInstallCleaner} from "./tools/install/GlassCatInstallCleaner";
 
-// Config file:
-const CFG:any = require("../../../config/glasscat-install-config.json");
-
 /**
  * The <code>GlassCatInstall</code> command allows to install a new GlassCat
  * server instance.
@@ -46,6 +43,7 @@ export class GlassCatInstall implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
+    const CFG:any = require("../../../config/glasscat-install-config.json");
     const loader:GlassCatLoader = new GlassCatLoader();
     const logger:CliLogger = ConsoleCliLogger.getInstance();
     const version:string = CFG.version;

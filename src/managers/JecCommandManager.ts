@@ -16,6 +16,7 @@
 
 import {CommandManager, AbstractCommandManager} from "jec-tool-cli";
 import {JecCommandStrategy} from "./strategy/JecCommandStrategy";
+import * as path from "path";
 
 /**
  * The <code>JecCommandManager</code> class runs specific Jec commands depending
@@ -34,7 +35,7 @@ export class JecCommandManager extends AbstractCommandManager
    * @param {string} processTitle the name of the  current process.
    */
   constructor(processTitle:string) {
-    super(processTitle);
+    super(processTitle, path.resolve(__dirname, "../../package.json"));
     this.initManager();
   }
   

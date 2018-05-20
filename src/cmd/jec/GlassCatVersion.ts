@@ -16,9 +16,6 @@
 
 import {Command, CliLogger, ConsoleCliLogger} from "jec-tool-cli";
 
-// Config file:
-const CFG:any = require("../../../config/glasscat-install-config.json");
-
 /**
  * The <code>GlassCatVersion</code> displays the default GlassCat version used
  * for installing GlassCat servers with the <code>jec glasscat-install</code>
@@ -43,6 +40,7 @@ export class GlassCatVersion implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
+    const CFG:any = require("../../../config/glasscat-install-config.json");
     const logger:CliLogger = ConsoleCliLogger.getInstance();
     logger.log(`Default GlassCat version: ${CFG.version}.`);
   }

@@ -17,9 +17,6 @@
 import {Command} from "jec-tool-cli";
 import {ConsoleCliLogger} from "jec-tool-cli";
 
-// Config file:
-const CFG:any = require("../../../package.json");
-
 /**
  * The <code>Version</code> command displays the current JEC CLI version.
  */
@@ -42,6 +39,7 @@ export class Version implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
+    const CFG:any = require("../../../package.json");
     ConsoleCliLogger.getInstance().log(`${CFG.name} - version: ${CFG.version}`);
   }
 }
