@@ -121,7 +121,7 @@ export class CreateTestSuite implements Command {
   }
 
   /**
-   * Extracts the methods for which to create test cases from the loades class
+   * Extracts the methods for which to create test cases from the loaded class
    * file.
    * 
    * @param {string} data the class file from which to extract method names.
@@ -131,7 +131,7 @@ export class CreateTestSuite implements Command {
   private extractDeclarations(data:string, complete:Function):void {
     const result:string[] = new Array<string>();
     const parser:TypescriptParser = new TypescriptParser();
-    const parsed:Promise<File> = parser.parseSource(data.toString());
+    const parsed:Promise<File> = parser.parseSource(data);
     let len:number = -1;
     let declarations:MethodDeclaration[] = null;
     let declaration:any = null;
@@ -192,7 +192,8 @@ export class CreateTestSuite implements Command {
       if(err) logger.error(err);
       else {
         this.extractDeclarations(data.toString(), (error:any, data:any) => {
-          if(err) logger.error(error); else {
+          if(err) logger.error(error);
+          else {
             dto.methods = data;
             this.write(
               dto,
