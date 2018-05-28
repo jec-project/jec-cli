@@ -1,5 +1,14 @@
 # JEC CLI Project: Update Release Notes
 
+<a name="jec-cli-0.3.0"></a>
+## **0.3.0** (2018-05-20)
+
+### Bug Fixes
+
+### Features
+
+- Adding command for JARS root paths
+
 <a name="jec-cli-0.2.0"></a>
 ## **0.2.0** (2018-05-20)
 

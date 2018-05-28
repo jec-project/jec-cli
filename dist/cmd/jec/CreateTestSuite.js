@@ -44,7 +44,7 @@ class CreateTestSuite {
     extractDeclarations(data, complete) {
         const result = new Array();
         const parser = new typescript_parser_1.TypescriptParser();
-        const parsed = parser.parseSource(data.toString());
+        const parsed = parser.parseSource(data);
         let len = -1;
         let declarations = null;
         let declaration = null;

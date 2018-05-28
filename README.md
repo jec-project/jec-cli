@@ -57,7 +57,6 @@ The following command list shows some of these functionalities. This list is not
 
 ```bash
 $ jec create-resource
-$ jec create-test-suite
 ```
 
 **GlassCat Commands:**
@@ -79,7 +78,7 @@ $ glasscat remove-gmp
 
 ## Update Release Notes
 
-**Current stable release:** [0.2.0](CHANGELOG.md#jec-cli-0.2.0)
+**Current stable release:** [0.3.0](CHANGELOG.md#jec-cli-0.3.0)
  
 For a complete listing of release notes for all JEC CLI update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 

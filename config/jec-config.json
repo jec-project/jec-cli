@@ -106,5 +106,39 @@
         "description": "Indicates the class for which to create the test suite."
       }
     ]
+  },
+  {
+    "command": "create-root-path",
+    "action": "jec/create-root-path",
+    "description": "Creates a new a JARS root path.",
+    "signature": "--name --ref [--path] [--prefix] [--major] [--minor]",
+    "options": [
+      {
+        "name": "name",
+        "required": true,
+        "description": "The name of the root path."
+      },
+      {
+        "name": "ref",
+        "required": true,
+        "description": "The reference used to identify the root path."
+      },
+      {
+        "name": "path",
+        "description": "An additional path used by the root path to define a specific versioned route."
+      },
+      {
+        "name": "prefix",
+        "description": "The prefix used to define a unique versioned route. Default value is 'v'"
+      },
+      {
+        "name": "major",
+        "description": "The major version number used to define a unique versioned route. Default value is '1'"
+      },
+      {
+        "name": "minor",
+        "description": "The major minor number used to define a unique versioned route. Default value is '0'"
+      }
+    ]
   }
 ]
