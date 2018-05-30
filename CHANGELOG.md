@@ -7,6 +7,7 @@
 
 ### Features
 
+- Adding command for JARS resources
 - Adding command for JARS root paths
 
 <a name="jec-cli-0.2.0"></a>

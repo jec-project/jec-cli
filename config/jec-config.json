@@ -108,6 +108,28 @@
     ]
   },
   {
+    "command": "create-resource",
+    "action": "jec/create-resource",
+    "description": "Creates a new a JARS resource class.",
+    "signature": "--name --path [--rootPathRefs]",
+    "options": [
+      {
+        "name": "name",
+        "required": true,
+        "description": "The name of the resource class."
+      },
+      {
+        "name": "path",
+        "required": true,
+        "description": "The path used to declare the resource."
+      },
+      {
+        "name": "rootPathRefs",
+        "description": "The list of references that specify all enable versions of the resource"
+      }
+    ]
+  },
+  {
     "command": "create-root-path",
     "action": "jec/create-root-path",
     "description": "Creates a new a JARS root path.",
