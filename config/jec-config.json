@@ -133,7 +133,7 @@
     "command": "create-root-path",
     "action": "jec/create-root-path",
     "description": "Creates a new a JARS root path.",
-    "signature": "--name --ref [--path] [--prefix] [--major] [--minor]",
+    "signature": "--name --ref --path [--prefix] [--major] [--minor]",
     "options": [
       {
         "name": "name",
@@ -147,7 +147,8 @@
       },
       {
         "name": "path",
-        "description": "An additional path used by the root path to define a specific versioned route."
+        "required": true,
+        "description": "The path used to define a specific versioned route."
       },
       {
         "name": "prefix",
