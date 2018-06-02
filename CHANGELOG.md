@@ -9,6 +9,7 @@
 
 - Adding command for JARS resources
 - Adding command for JARS root paths
+- Upgrading GlassCat release from `0.1.5` to `0.1.6`
 
 <a name="jec-cli-0.2.0"></a>
 ## **0.2.0** (2018-05-20)
