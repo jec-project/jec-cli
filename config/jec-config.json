@@ -125,7 +125,7 @@
       },
       {
         "name": "rootPathRefs",
-        "description": "The list of references that specify all enable versions of the resource"
+        "description": "The list of references that specify all enable versions of the resource."
       }
     ]
   },
@@ -152,15 +152,15 @@
       },
       {
         "name": "prefix",
-        "description": "The prefix used to define a unique versioned route. Default value is 'v'"
+        "description": "The prefix used to define a unique versioned route. Default value is 'v'."
       },
       {
         "name": "major",
-        "description": "The major version number used to define a unique versioned route. Default value is '1'"
+        "description": "The major version number used to define a unique versioned route. Default value is '1'."
       },
       {
         "name": "minor",
-        "description": "The major minor number used to define a unique versioned route. Default value is '0'"
+        "description": "The major minor number used to define a unique versioned route. Default value is '0'."
       }
     ]
   }
