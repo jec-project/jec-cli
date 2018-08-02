@@ -1,5 +1,10 @@
 # JEC CLI Project
 
+[![JEC version](https://img.shields.io/badge/JEC-1.0-%23ba00ff.svg)](http://jecproject.org)
+[![GlassCat version](https://img.shields.io/badge/GlassCat-1.0-%230a50ff.svg)](http://jecproject.org)
+[![npm version](https://badge.fury.io/js/nstall jec-cli.svg)](https://www.npmjs.com/package/nstall jec-cli)
+[![Apache 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
 The CLI Project contains the command-line user interface for managing JEC projects.
 
 [![][jec-logo]][jec-url]
@@ -78,7 +83,7 @@ $ glasscat remove-gmp
 
 ## Update Release Notes
 
-**Current stable release:** [0.3.0](CHANGELOG.md#jec-cli-0.3.0)
+**Current stable release:** [0.3.1](CHANGELOG.md#jec-cli-0.3.1)
  
 For a complete listing of release notes for all JEC CLI update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 
